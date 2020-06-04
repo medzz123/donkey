@@ -11,4 +11,15 @@ const Register: RegisterPageType = (props) => {
   );
 };
 
+Register.getInitialProps = async () => {
+  return {
+    showLayout: true,
+    meta: {
+      title: "Donkey",
+      page: "Register",
+      description: "Your friendly donkey app!",
+    },
+  };
+};
+
 export default Register;

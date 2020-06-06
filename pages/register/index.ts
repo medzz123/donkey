@@ -1,1 +1,1 @@
-export { default } from "../../src/pages/Register";
+export { default } from "@pages/Register";

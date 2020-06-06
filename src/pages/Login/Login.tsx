@@ -2,12 +2,12 @@ import React from "react";
 import { LoginPageType } from "./Login.models";
 import { Button } from "@material-ui/core";
 import { Formik, Form } from "formik";
-import FormikTextInput from "../../components/FormikTextInput";
+import FormikTextInput from "@components/FormikTextInput";
 import { validateLogIn } from "./Login.validate";
 import { useMutation } from "@apollo/react-hooks";
 import { LOGIN_MUTATION } from "./Login.domain";
 import { Wrapper, Left, Right, FormWrapper } from "./Login.styles";
-import { Title } from "../../theme/typography";
+import { Title } from "@theme/typography";
 
 const Login: LoginPageType = (props) => {
   const {} = props;

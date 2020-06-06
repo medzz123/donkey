@@ -1,12 +1,12 @@
 import Layout from "../src/components/Layout/Layout";
-import { GlobalStyles } from "../src/theme/globalStyles";
+import { GlobalStyles } from "@theme/globalStyles";
 import Head from "next/head";
 
 import { ApolloProvider } from "@apollo/react-hooks";
 
-import withData from "../src/utils/apollo-client";
+import withData from "@utils/apollo-client";
 
-function App({ Component, pageProps, apollo }) {
+const App = ({ Component, pageProps, apollo }) => {
   const { meta, showLayout } = pageProps;
 
   return (
@@ -25,6 +25,6 @@ function App({ Component, pageProps, apollo }) {
       </Layout>
     </ApolloProvider>
   );
-}
+};
 
 export default withData(App);

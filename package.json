@@ -8,11 +8,11 @@
     "now-build": "next build",
     "lint": "eslint '*/**/*.{ts,tsx}'",
     "lint:fix": "yarn lint --fix",
-    "test": "jest"
+    "test": "jest",
+    "ts": "tsc --noEmit"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.5",
-    "@material-ui/core": "^4.10.1",
     "@types/next": "^9.0.0",
     "@types/react": "^16.9.35",
     "apollo-cache-inmemory": "^1.6.6",

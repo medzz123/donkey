@@ -1,6 +1,5 @@
 import React from 'react';
 import { LoginPageType } from './Login.models';
-import { Button } from '@material-ui/core';
 import { Formik, Form } from 'formik';
 import FormikTextInput from '@components/FormikTextInput';
 import { validateLogIn } from './Login.validate';
@@ -40,13 +39,13 @@ const Login: LoginPageType = () => {
                   type="password"
                   label="Password"
                 />
-                <Button
+                <button
                   type="submit"
                   color="primary"
                   disabled={props.isSubmitting}
                 >
                   Login
-                </Button>
+                </button>
               </Form>
             )}
           </Formik>

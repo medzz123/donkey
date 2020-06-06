@@ -20,78 +20,30 @@ exports[`<LoginPage /> should render without throwing an error and match snapsho
         onReset={[Function]}
         onSubmit={[Function]}
       >
-        <div
-          className="MuiFormControl-root MuiTextField-root"
-        >
-          <div
-            className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
-            onClick={[Function]}
-          >
-            <input
-              aria-invalid={false}
-              autoFocus={false}
-              className="MuiInputBase-input MuiInput-input"
-              disabled={false}
-              name="email"
-              onAnimationStart={[Function]}
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              placeholder="Email"
-              required={false}
-              type="email"
-              value=""
-            />
-          </div>
-        </div>
+        <input
+          name="email"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Email"
+          type="email"
+          value=""
+        />
         <p />
-        <div
-          className="MuiFormControl-root MuiTextField-root"
-        >
-          <div
-            className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
-            onClick={[Function]}
-          >
-            <input
-              aria-invalid={false}
-              autoFocus={false}
-              className="MuiInputBase-input MuiInput-input"
-              disabled={false}
-              name="password"
-              onAnimationStart={[Function]}
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              placeholder="Password"
-              required={false}
-              type="password"
-              value=""
-            />
-          </div>
-        </div>
+        <input
+          name="password"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Password"
+          type="password"
+          value=""
+        />
         <p />
         <button
-          className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary"
+          color="primary"
           disabled={false}
-          onBlur={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
           type="submit"
         >
-          <span
-            className="MuiButton-label"
-          >
-            Login
-          </span>
+          Login
         </button>
       </form>
     </div>

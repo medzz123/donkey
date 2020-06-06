@@ -1,9 +1,7 @@
-import React from "react";
-import { RegisterPageType } from "./Register.models";
+import React from 'react';
+import { RegisterPageType } from './Register.models';
 
-const Register: RegisterPageType = (props) => {
-  const {} = props;
-
+const Register: RegisterPageType = () => {
   return (
     <div>
       <div>Sup sup in register</div>
@@ -15,9 +13,9 @@ Register.getInitialProps = async () => {
   return {
     showLayout: true,
     meta: {
-      title: "Donkey",
-      page: "Register",
-      description: "Your friendly donkey app!",
+      title: 'Donkey',
+      page: 'Register',
+      description: 'Your friendly donkey app!',
     },
   };
 };

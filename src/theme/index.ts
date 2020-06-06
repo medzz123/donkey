@@ -1,4 +1,4 @@
-import { palette } from "./colors";
+import { palette } from './colors';
 
 export default {
   colors: palette,

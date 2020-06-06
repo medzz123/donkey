@@ -1,3 +1,3 @@
-import { NextPage } from "next";
+import { NextPage } from 'next';
 
-export type RegisterPageType = NextPage<any>;
+export type RegisterPageType = NextPage;

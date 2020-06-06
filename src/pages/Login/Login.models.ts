@@ -1,6 +1,6 @@
-import { NextPage } from "next";
+import { NextPage } from 'next';
 
-export type LoginPageType = NextPage<any>;
+export type LoginPageType = NextPage;
 
 export interface LoginValues {
   email: string;

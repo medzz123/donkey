@@ -1,10 +1,11 @@
-import Layout from "../src/components/Layout/Layout";
-import { GlobalStyles } from "@theme/globalStyles";
-import Head from "next/head";
+import React from 'react';
+import Layout from '../src/components/Layout/Layout';
+import { GlobalStyles } from '@theme/globalStyles';
+import Head from 'next/head';
 
-import { ApolloProvider } from "@apollo/react-hooks";
+import { ApolloProvider } from '@apollo/react-hooks';
 
-import withData from "@utils/apollo-client";
+import withData from '@utils/apollo-client';
 
 const App = ({ Component, pageProps, apollo }) => {
   const { meta, showLayout } = pageProps;
@@ -13,7 +14,7 @@ const App = ({ Component, pageProps, apollo }) => {
     <ApolloProvider client={apollo}>
       <Layout showLayout={showLayout || false}>
         <Head>
-          <title>{meta?.title || "Donkey"}</title>
+          <title>{meta?.title || 'Donkey'}</title>
           <meta charSet="utf-8" />
           <meta
             name="viewport"

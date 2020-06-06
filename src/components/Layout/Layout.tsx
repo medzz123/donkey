@@ -1,11 +1,11 @@
-import * as React from "react";
-import Link from "next/link";
-import { LayoutProps } from "./Layout.models";
+import * as React from 'react';
+import Link from 'next/link';
+import { LayoutProps } from './Layout.models';
 
 const layoutStyle = {
   margin: 20,
   padding: 20,
-  border: "1px solid #DDD",
+  border: '1px solid #DDD',
 };
 
 const Layout: React.FunctionComponent<LayoutProps> = (props) => {
@@ -20,19 +20,13 @@ const Layout: React.FunctionComponent<LayoutProps> = (props) => {
         <nav
           style={{
             maxWidth: 300,
-            display: "flex",
-            justifyContent: "space-between",
+            display: 'flex',
+            justifyContent: 'space-between',
           }}
         >
-          <Link href="/">
-            <a>Home</a>
-          </Link>
-          <Link href="/login">
-            <a>Login</a>
-          </Link>
-          <Link href="/register">
-            <a>Register</a>
-          </Link>
+          <Link href="/">Home</Link>
+          <Link href="/login">Login</Link>
+          <Link href="/register">Register</Link>
         </nav>
       </header>
       {children}

@@ -1,16 +1,15 @@
-import React from "react";
-import { LoginPageType } from "./Login.models";
-import { Button } from "@material-ui/core";
-import { Formik, Form } from "formik";
-import FormikTextInput from "@components/FormikTextInput";
-import { validateLogIn } from "./Login.validate";
-import { useMutation } from "@apollo/react-hooks";
-import { LOGIN_MUTATION } from "./Login.domain";
-import { Wrapper, Left, Right, FormWrapper } from "./Login.styles";
-import { Title } from "@theme/typography";
+import React from 'react';
+import { LoginPageType } from './Login.models';
+import { Button } from '@material-ui/core';
+import { Formik, Form } from 'formik';
+import FormikTextInput from '@components/FormikTextInput';
+import { validateLogIn } from './Login.validate';
+import { useMutation } from '@apollo/react-hooks';
+import { LOGIN_MUTATION } from './Login.domain';
+import { Wrapper, Left, Right, FormWrapper } from './Login.styles';
+import { Title } from '@theme/typography';
 
-const Login: LoginPageType = (props) => {
-  const {} = props;
+const Login: LoginPageType = () => {
   const [loginMutation, { data }] = useMutation(LOGIN_MUTATION);
 
   return (
@@ -19,7 +18,7 @@ const Login: LoginPageType = (props) => {
         <FormWrapper>
           <Title>Welcome back!</Title>
           <Formik
-            initialValues={{ email: "", password: "" }}
+            initialValues={{ email: '', password: '' }}
             validate={validateLogIn}
             onSubmit={async (values) => {
               try {
@@ -27,9 +26,9 @@ const Login: LoginPageType = (props) => {
                   variables: { email: values.email, password: values.password },
                 });
 
-                console.log("Succeeded login", data);
+                console.log('Succeeded login', data);
               } catch (e) {
-                console.log("Login failed", e);
+                console.log('Login failed', e);
               }
             }}
           >
@@ -69,9 +68,9 @@ Login.getInitialProps = async () => {
   return {
     showLayout: false,
     meta: {
-      title: "Donkey",
-      page: "Login",
-      description: "Your friendly donkey app!",
+      title: 'Donkey',
+      page: 'Login',
+      description: 'Your friendly donkey app!',
     },
   };
 };

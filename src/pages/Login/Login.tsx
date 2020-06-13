@@ -7,9 +7,10 @@ import { useMutation } from '@apollo/react-hooks';
 import { Wrapper, Left, Right, FormWrapper } from './Login.styles';
 import { Title } from '@theme/typography';
 import { LOGIN_MUTATION } from '@domain/mutations/auth';
+import Cookie from 'js-cookie';
 
 const Login: LoginPageType = () => {
-  const [loginMutation, { data }] = useMutation(LOGIN_MUTATION);
+  const [loginMutation] = useMutation(LOGIN_MUTATION);
 
   return (
     <Wrapper>
@@ -21,14 +22,14 @@ const Login: LoginPageType = () => {
             validate={validateLogIn}
             onSubmit={async (values) => {
               try {
-                await loginMutation({
+                const response = await loginMutation({
                   variables: {
                     username: values.username,
                     password: values.password,
                   },
                 });
 
-                console.log('Succeeded login', data);
+                Cookie.set('token', response.data.loginUser.token);
               } catch (e) {
                 console.log('Login failed', e);
               }
@@ -40,6 +41,7 @@ const Login: LoginPageType = () => {
                 <FormikTextInput
                   name="password"
                   type="password"
+                  autoComplete="password"
                   label="Password"
                 />
                 <button

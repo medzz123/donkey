@@ -3,28 +3,30 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import withApollo from 'next-with-apollo';
 import { createHttpLink } from 'apollo-link-http';
 import fetch from 'isomorphic-unfetch';
+import cookie from 'cookie';
 
 const GRAPHQL_URL = 'https://donkey-engine.herokuapp.com/';
 
-const link = createHttpLink({
-  fetch,
-  uri: GRAPHQL_URL,
+const parseCookies = (req, options = {}) => {
+  return cookie.parse(
+    req ? req.headers.cookie || '' : document.cookie,
+    options
+  );
+};
+
+export default withApollo((props) => {
+  const { initialState, ctx } = props;
+
+  const cookies = parseCookies(ctx?.req);
+
+  const token = cookies.token;
+
+  return new ApolloClient({
+    link: createHttpLink({
+      fetch,
+      uri: GRAPHQL_URL,
+      headers: { authorization: token },
+    }),
+    cache: new InMemoryCache().restore(initialState || {}),
+  });
 });
-
-export default withApollo(
-  ({ initialState }) =>
-    new ApolloClient({
-      link: link,
-      cache: new InMemoryCache().restore(initialState || {}),
-    })
-);
-
-// const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
-//     cache,
-//     link: new HttpLink({
-//       uri: 'http://localhost:4000/graphql',
-//       headers: {
-//         authorization: localStorage.getItem('token'),
-//       },
-//     }),
-//   });

@@ -30,6 +30,7 @@ exports[`<LoginPage /> should render without throwing an error and match snapsho
         />
         <p />
         <input
+          autoComplete="password"
           name="password"
           onBlur={[Function]}
           onChange={[Function]}

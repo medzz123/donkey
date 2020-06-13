@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../src/components/Layout/Layout';
 import { GlobalStyles } from '@theme/globalStyles';
 import Head from 'next/head';
+import NextApp from 'next/app';
 
 import { ApolloProvider } from '@apollo/react-hooks';
 
@@ -26,6 +27,11 @@ const App = ({ Component, pageProps, apollo }) => {
       </Layout>
     </ApolloProvider>
   );
+};
+
+App.getInitialProps = async (appContext) => {
+  const appProps = await NextApp.getInitialProps(appContext);
+  return { ...appProps };
 };
 
 export default withData(App);

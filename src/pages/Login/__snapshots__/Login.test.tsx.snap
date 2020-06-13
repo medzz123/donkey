@@ -2,7 +2,7 @@
 
 exports[`<LoginPage /> should render without throwing an error and match snapshot 1`] = `
 <div
-  className="sc-AxjAm fzbXpb"
+  className="sc-AxjAm iOssrb"
 >
   <h1
     className="sc-AxirZ gKxylU"

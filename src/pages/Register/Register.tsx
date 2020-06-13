@@ -1,11 +1,22 @@
 import React from 'react';
 import { RegisterPageType } from './Register.models';
 import { withAuth } from '@utils/withAuth';
+import Cookie from 'js-cookie';
+import Router from 'next/router';
 
 const Register: RegisterPageType = () => {
   return (
     <div>
       <div>Sup sup in register</div>
+      <button
+        type="button"
+        onClick={() => {
+          Cookie.remove('token');
+          Router.push('/login');
+        }}
+      >
+        Log out
+      </button>
     </div>
   );
 };

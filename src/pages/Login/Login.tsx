@@ -8,6 +8,7 @@ import { Wrapper, Left, Right, FormWrapper } from './Login.styles';
 import { Title } from '@theme/typography';
 import { LOGIN_MUTATION } from '@domain/mutations/auth';
 import Cookie from 'js-cookie';
+import Router from 'next/router';
 
 const Login: LoginPageType = () => {
   const [loginMutation] = useMutation(LOGIN_MUTATION);
@@ -30,6 +31,7 @@ const Login: LoginPageType = () => {
                 });
 
                 Cookie.set('token', response.data.loginUser.token);
+                Router.push('/register');
               } catch (e) {
                 console.log('Login failed', e);
               }

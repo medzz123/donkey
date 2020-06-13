@@ -1,5 +1,6 @@
-import React from 'react';
 import { Modal as MuiModal } from '@material-ui/core';
+import React from 'react';
+
 import { ModalProps } from './Modal.models';
 import { modalStyle, useStyles } from './Modal.styles';
 

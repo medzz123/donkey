@@ -1,5 +1,6 @@
-import { UserValues } from './CreateUser.models';
 import { FormikErrors } from 'formik';
+
+import { UserValues } from './CreateUser.models';
 
 export const validateCreateUser = (values: UserValues) => {
   const errors: FormikErrors<UserValues> = {};

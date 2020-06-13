@@ -1,6 +1,7 @@
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
+  plugins: ["simple-import-sort"],
   parserOptions: {
     ecmaFeatures: { jsx: true },
   },
@@ -23,6 +24,7 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
     'jsx-a11y/anchor-is-valid': 'off',
+    "simple-import-sort/sort": "error"
   },
   settings: {
     react: {

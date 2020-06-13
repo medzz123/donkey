@@ -1,6 +1,6 @@
-import React from 'react';
-import redirect from '@utils/redirect';
 import { ME_QUERY } from '@domain/queries/user';
+import redirect from '@utils/redirect';
+import React from 'react';
 
 const Index = () => {
   return (

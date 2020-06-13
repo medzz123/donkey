@@ -1,14 +1,15 @@
-import React from 'react';
-import { validateCreateUser } from './CreateUser.validate';
-import { toast } from 'react-toastify';
-import { CREATE_USER_MUTATION } from '@domain/mutations/user';
 import { useMutation } from '@apollo/react-hooks';
-import { Formik, Form } from 'formik';
 import FormikTextInput from '@components/FormikTextInput';
+import Modal from '@components/Modal';
+import { CREATE_USER_MUTATION } from '@domain/mutations/user';
 import { Button } from '@material-ui/core';
+import { Form, Formik } from 'formik';
+import React from 'react';
+import { toast } from 'react-toastify';
+
 import { CreateUserProps } from './CreateUser.models';
 import { useStyles } from './CreateUser.styles';
-import Modal from '@components/Modal';
+import { validateCreateUser } from './CreateUser.validate';
 
 const CreateUser: React.FunctionComponent<CreateUserProps> = (props) => {
   const { onSuccess, open, handleClose } = props;

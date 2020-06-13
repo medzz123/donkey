@@ -1,16 +1,15 @@
-import React from 'react';
+import { useQuery } from '@apollo/react-hooks';
+import CreateUser from '@components/CreateUser';
+import UsersTable from '@components/UsersTable';
+import { USERS_LIST_QUERY } from '@domain/queries/user';
+import { Button } from '@material-ui/core';
+import Divider from '@material-ui/core/Divider';
+import Typography from '@material-ui/core/Typography';
 import { withAuth } from '@utils/withAuth';
 import { NextPage } from 'next';
-import { useQuery } from '@apollo/react-hooks';
-import { USERS_LIST_QUERY } from '@domain/queries/user';
-
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
+import React from 'react';
 
 import { useStyles } from './Home.styles';
-import UsersTable from '@components/UsersTable';
-import CreateUser from '@components/CreateUser';
-import { Button } from '@material-ui/core';
 
 const Home: NextPage = () => {
   const { data, loading, refetch, networkStatus } = useQuery(USERS_LIST_QUERY);

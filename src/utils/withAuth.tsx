@@ -1,6 +1,7 @@
-import React from 'react';
-import redirect from './redirect';
 import { ME_QUERY } from '@domain/queries/user';
+import React from 'react';
+
+import redirect from './redirect';
 
 export const withAuth = (C) => {
   return class AuthComponent extends React.Component {

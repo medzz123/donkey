@@ -1,8 +1,9 @@
 import { MockedProvider } from '@apollo/react-testing';
+import { CREATE_USER_MUTATION } from '@domain/mutations/user';
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
+
 import CreateUser from '.';
-import { CREATE_USER_MUTATION } from '@domain/mutations/user';
 
 const mocks = [
   {

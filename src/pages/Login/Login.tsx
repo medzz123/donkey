@@ -1,15 +1,16 @@
-import React from 'react';
-import { LoginPageType } from './Login.models';
-import { Formik, Form } from 'formik';
-import FormikTextInput from '@components/FormikTextInput';
-import { validateLogIn } from './Login.validate';
 import { useMutation } from '@apollo/react-hooks';
-import { Wrapper } from './Login.styles';
+import FormikTextInput from '@components/FormikTextInput';
 import { LOGIN_MUTATION } from '@domain/mutations/auth';
+import { Button, Typography } from '@material-ui/core';
+import { Form, Formik } from 'formik';
 import Cookie from 'js-cookie';
 import Router from 'next/router';
+import React from 'react';
 import { toast } from 'react-toastify';
-import { Typography, Button } from '@material-ui/core';
+
+import { LoginPageType } from './Login.models';
+import { Wrapper } from './Login.styles';
+import { validateLogIn } from './Login.validate';
 
 const Login: LoginPageType = () => {
   const [loginMutation] = useMutation(LOGIN_MUTATION);

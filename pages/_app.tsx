@@ -1,18 +1,16 @@
-import React from 'react';
-import Layout from '../src/components/Layout/Layout';
-import Head from 'next/head';
-import NextApp from 'next/app';
-
-import { ApolloProvider } from '@apollo/react-hooks';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import withData from '@utils/apollo-client';
-
-import { ThemeProvider } from '@material-ui/core/styles';
+import { ApolloProvider } from '@apollo/react-hooks';
 import CssBaseline from '@material-ui/core/CssBaseline';
-
+import { ThemeProvider } from '@material-ui/core/styles';
 import theme from '@theme/mui';
+import withData from '@utils/apollo-client';
+import NextApp from 'next/app';
+import Head from 'next/head';
+import React from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+
+import Layout from '../src/components/Layout/Layout';
 
 const App = ({ Component, pageProps, apollo }) => {
   const { meta, showLayout } = pageProps;

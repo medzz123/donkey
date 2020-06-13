@@ -1,27 +1,27 @@
-import * as React from 'react';
-import Link from 'next/link';
-import clsx from 'clsx';
-import { useTheme } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import List from '@material-ui/core/List';
+import { logout } from '@domain/handlers/logout';
+import AppBar from '@material-ui/core/AppBar';
 import Divider from '@material-ui/core/Divider';
+import Drawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import Typography from '@material-ui/core/Typography';
-import AppBar from '@material-ui/core/AppBar';
+import { useTheme } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
-import MenuIcon from '@material-ui/icons/Menu';
+import Typography from '@material-ui/core/Typography';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import Home from '@material-ui/icons/Home';
-import Polymer from '@material-ui/icons/Polymer';
 import Lock from '@material-ui/icons/Lock';
+import MenuIcon from '@material-ui/icons/Menu';
+import Polymer from '@material-ui/icons/Polymer';
+import clsx from 'clsx';
+import Link from 'next/link';
+import * as React from 'react';
 
 import { LayoutProps } from './Layout.models';
 import { useStyles } from './Layout.styles';
-import { logout } from '@domain/handlers/logout';
 
 const Layout: React.FunctionComponent<LayoutProps> = (props) => {
   const { children, showLayout } = props;

@@ -1,13 +1,13 @@
-import React from 'react';
-import { UsersTableProps } from './UsersTable.models';
-
+import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
+import React from 'react';
+
+import { UsersTableProps } from './UsersTable.models';
 import { useStyles } from './UsersTable.styles';
 
 const UsersTable: React.FunctionComponent<UsersTableProps> = (props) => {

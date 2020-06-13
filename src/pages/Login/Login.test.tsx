@@ -1,8 +1,9 @@
 import { MockedProvider } from '@apollo/react-testing';
+import { LOGIN_MUTATION } from '@domain/mutations/auth';
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
+
 import LoginPage from '.';
-import { LOGIN_MUTATION } from '@domain/mutations/auth';
 
 const mocks = [
   {

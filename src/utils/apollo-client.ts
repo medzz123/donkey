@@ -1,9 +1,9 @@
-import { ApolloClient } from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
-import withApollo from 'next-with-apollo';
+import { ApolloClient } from 'apollo-client';
 import { createHttpLink } from 'apollo-link-http';
-import fetch from 'isomorphic-unfetch';
 import cookie from 'cookie';
+import fetch from 'isomorphic-unfetch';
+import withApollo from 'next-with-apollo';
 
 const GRAPHQL_URL = 'https://donkey-engine.herokuapp.com/';
 

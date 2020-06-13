@@ -1,5 +1,6 @@
-import { LoginValues } from './Login.models';
 import { FormikErrors } from 'formik';
+
+import { LoginValues } from './Login.models';
 
 export const validateLogIn = (values: LoginValues) => {
   const errors: FormikErrors<LoginValues> = {};

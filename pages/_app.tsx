@@ -10,28 +10,42 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import withData from '@utils/apollo-client';
 
+import { ThemeProvider } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+
+import theme from '@theme/muiTheme';
+
 const App = ({ Component, pageProps, apollo }) => {
   const { meta, showLayout } = pageProps;
 
+  React.useEffect(() => {
+    // Remove the server-side injected CSS.
+    const jssStyles = document.querySelector('#jss-server-side');
+    if (jssStyles) {
+      jssStyles.parentElement?.removeChild(jssStyles);
+    }
+  }, []);
+
   return (
     <ApolloProvider client={apollo}>
-      <Layout showLayout={showLayout || false}>
-        <Head>
-          <title>{meta?.title || 'Donkey'}</title>
-          <meta charSet="utf-8" />
-          <meta
-            name="viewport"
-            content="initial-scale=1.0, width=device-width"
-          />
-        </Head>
-        <GlobalStyles />
+      <Head>
+        <title>{meta?.title || 'Donkey'}</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+      </Head>
 
-        <ToastContainer
-          // @ts-ignore
-          position={toast.POSITION.BOTTOM_RIGHT}
-        />
-        <Component {...pageProps} />
-      </Layout>
+      <GlobalStyles />
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Layout showLayout={showLayout || false}>
+          <ToastContainer
+            // @ts-ignore
+            position={toast.POSITION.BOTTOM_RIGHT}
+          />
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeProvider>
     </ApolloProvider>
   );
 };

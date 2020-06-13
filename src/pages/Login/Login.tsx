@@ -62,7 +62,7 @@ const Login: LoginPageType = () => {
 
 Login.getInitialProps = async () => {
   return {
-    showLayout: true,
+    showLayout: false,
     meta: {
       title: 'Donkey',
       page: 'Login',

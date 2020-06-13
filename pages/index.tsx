@@ -1,4 +1,5 @@
 import React from 'react';
+import redirect from '@utils/redirect';
 
 const Index = () => {
   return (
@@ -13,7 +14,9 @@ const Index = () => {
   );
 };
 
-Index.getInitialProps = async () => {
+Index.getInitialProps = async (ctx) => {
+  redirect(ctx, '/home');
+
   return {
     showLayout: true,
     meta: {

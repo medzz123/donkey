@@ -24,9 +24,15 @@ const Layout: React.FunctionComponent<LayoutProps> = (props) => {
             justifyContent: 'space-between',
           }}
         >
-          <Link href="/">Home</Link>
-          <Link href="/login">Login</Link>
-          <Link href="/register">Register</Link>
+          <Link href="/">
+            <a>Home</a>
+          </Link>
+          <Link href="/login">
+            <a>Login</a>
+          </Link>
+          <Link href="/register">
+            <a>Register</a>
+          </Link>
         </nav>
       </header>
       {children}

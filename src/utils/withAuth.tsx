@@ -5,6 +5,7 @@ import { ME_QUERY } from '@domain/queries/user';
 export const withAuth = (C) => {
   return class AuthComponent extends React.Component {
     static async getInitialProps({ apolloClient, ...ctx }) {
+      const pageProps = C.getInitialProps && (await C.getInitialProps(ctx));
       try {
         const response = await apolloClient.query({ query: ME_QUERY });
         if (!response || !response.data || !response.data.me) {
@@ -16,6 +17,7 @@ export const withAuth = (C) => {
 
         return {
           me: response.data.me,
+          ...pageProps,
         };
       } catch (err) {
         redirect(ctx, '/login');

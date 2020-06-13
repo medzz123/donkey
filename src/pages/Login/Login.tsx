@@ -4,9 +4,9 @@ import { Formik, Form } from 'formik';
 import FormikTextInput from '@components/FormikTextInput';
 import { validateLogIn } from './Login.validate';
 import { useMutation } from '@apollo/react-hooks';
-import { LOGIN_MUTATION } from './Login.domain';
 import { Wrapper, Left, Right, FormWrapper } from './Login.styles';
 import { Title } from '@theme/typography';
+import { LOGIN_MUTATION } from '@domain/mutations/auth';
 
 const Login: LoginPageType = () => {
   const [loginMutation, { data }] = useMutation(LOGIN_MUTATION);
@@ -17,12 +17,15 @@ const Login: LoginPageType = () => {
         <FormWrapper>
           <Title>Welcome back!</Title>
           <Formik
-            initialValues={{ email: '', password: '' }}
+            initialValues={{ username: '', password: '' }}
             validate={validateLogIn}
             onSubmit={async (values) => {
               try {
                 await loginMutation({
-                  variables: { email: values.email, password: values.password },
+                  variables: {
+                    email: values.username,
+                    password: values.password,
+                  },
                 });
 
                 console.log('Succeeded login', data);
@@ -33,7 +36,7 @@ const Login: LoginPageType = () => {
           >
             {(props) => (
               <Form>
-                <FormikTextInput name="email" type="email" label="Email" />
+                <FormikTextInput name="username" label="Email" />
                 <FormikTextInput
                   name="password"
                   type="password"

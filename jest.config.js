@@ -7,6 +7,7 @@ module.exports = {
       "^@theme(.*)$": "<rootDir>/src/theme$1",
       "^@utils(.*)$": "<rootDir>/src/utils$1",
       "^@pages(.*)$": "<rootDir>/src/pages$1",
+      "^@domain(.*)$": "<rootDir>/src/domain$1",
     },
     globals: {
       "ts-jest": {

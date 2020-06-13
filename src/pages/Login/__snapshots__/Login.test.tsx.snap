@@ -21,11 +21,11 @@ exports[`<LoginPage /> should render without throwing an error and match snapsho
         onSubmit={[Function]}
       >
         <input
-          name="email"
+          name="username"
           onBlur={[Function]}
           onChange={[Function]}
           placeholder="Email"
-          type="email"
+          type="text"
           value=""
         />
         <p />

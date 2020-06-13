@@ -16,7 +16,8 @@
           "@components": "./src/components",
           "@pages": "./src/pages",
           "@utils": "./src/utils",
-          "@theme": "./src/theme"
+          "@theme": "./src/theme",
+          "@domain": "./src/domain"
         }
       }
     ]

@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from '../src/components/Layout/Layout';
-import { GlobalStyles } from '@theme/globalStyles';
 import Head from 'next/head';
 import NextApp from 'next/app';
 
@@ -13,7 +12,7 @@ import withData from '@utils/apollo-client';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-import theme from '@theme/muiTheme';
+import theme from '@theme/mui';
 
 const App = ({ Component, pageProps, apollo }) => {
   const { meta, showLayout } = pageProps;
@@ -35,7 +34,6 @@ const App = ({ Component, pageProps, apollo }) => {
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
 
-      <GlobalStyles />
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Layout showLayout={showLayout || false}>

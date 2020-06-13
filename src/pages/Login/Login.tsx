@@ -5,11 +5,11 @@ import FormikTextInput from '@components/FormikTextInput';
 import { validateLogIn } from './Login.validate';
 import { useMutation } from '@apollo/react-hooks';
 import { Wrapper } from './Login.styles';
-import { Title } from '@theme/typography';
 import { LOGIN_MUTATION } from '@domain/mutations/auth';
 import Cookie from 'js-cookie';
 import Router from 'next/router';
 import { toast } from 'react-toastify';
+import { Typography, Button } from '@material-ui/core';
 
 const Login: LoginPageType = () => {
   const [loginMutation] = useMutation(LOGIN_MUTATION);
@@ -20,7 +20,7 @@ const Login: LoginPageType = () => {
 
   return (
     <Wrapper>
-      <Title>Welcome back!</Title>
+      <Typography variant="h3">Welcome back!</Typography>
       <Formik
         initialValues={{ username: '', password: '' }}
         validate={validateLogIn}
@@ -50,9 +50,14 @@ const Login: LoginPageType = () => {
               autoComplete="password"
               label="Password"
             />
-            <button type="submit" color="primary" disabled={props.isSubmitting}>
+            <Button
+              variant="contained"
+              color="primary"
+              type="submit"
+              disabled={props.isSubmitting}
+            >
               Login
-            </button>
+            </Button>
           </Form>
         )}
       </Formik>

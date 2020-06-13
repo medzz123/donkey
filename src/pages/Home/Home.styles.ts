@@ -8,4 +8,10 @@ export const useStyles = makeStyles({
     marginBottom: 40,
     marginTop: 40,
   },
+  header: {
+    display: 'flex',
+  },
+  title: {
+    marginRight: 20,
+  },
 });

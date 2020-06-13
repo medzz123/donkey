@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import redirect from './redirect';
 import { ME_QUERY } from '@domain/queries/user';
 

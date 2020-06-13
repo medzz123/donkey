@@ -16,7 +16,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import MenuIcon from '@material-ui/icons/Menu';
 import Home from '@material-ui/icons/Home';
-import Face from '@material-ui/icons/Face';
 import Polymer from '@material-ui/icons/Polymer';
 import Lock from '@material-ui/icons/Lock';
 
@@ -97,14 +96,6 @@ const Layout: React.FunctionComponent<LayoutProps> = (props) => {
                 <Home />
               </ListItemIcon>
               <ListItemText primary="Home" />
-            </ListItem>
-          </Link>
-          <Link href="/register">
-            <ListItem button>
-              <ListItemIcon>
-                <Face />
-              </ListItemIcon>
-              <ListItemText primary="Register" />
             </ListItem>
           </Link>
           <Link href="/login">

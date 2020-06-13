@@ -1,5 +1,6 @@
 import React from 'react';
 import redirect from '@utils/redirect';
+import { ME_QUERY } from '@domain/queries/user';
 
 const Index = () => {
   return (
@@ -15,16 +16,17 @@ const Index = () => {
 };
 
 Index.getInitialProps = async (ctx) => {
-  redirect(ctx, '/home');
+  try {
+    const response = await ctx.apolloClient.query({ query: ME_QUERY });
+    if (!response || !response.data || !response.data.me) {
+      redirect(ctx, '/login');
+    }
+    redirect(ctx, '/home');
+  } catch (err) {
+    redirect(ctx, '/login');
+  }
 
-  return {
-    showLayout: true,
-    meta: {
-      title: 'Donkey',
-      page: 'Home',
-      description: 'Your friendly donkey app!',
-    },
-  };
+  return {};
 };
 
 export default Index;

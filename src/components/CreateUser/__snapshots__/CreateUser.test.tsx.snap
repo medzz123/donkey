@@ -1,18 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<LoginPage /> should render without throwing an error and match snapshot 1`] = `
-<div
-  className="sc-AxjAm iOssrb"
+exports[`<CreateUser /> should render without throwing an error and match snapshot 1`] = `
+<form
+  action="#"
+  onReset={[Function]}
+  onSubmit={[Function]}
 >
-  <h1
-    className="sc-AxirZ gKxylU"
-  >
-    Welcome back!
-  </h1>
-  <form
-    action="#"
-    onReset={[Function]}
-    onSubmit={[Function]}
+  <div
+    className="makeStyles-form-1"
   >
     <div
       className="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
@@ -21,7 +16,37 @@ exports[`<LoginPage /> should render without throwing an error and match snapsho
         className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
         data-shrink={false}
       >
-        Email
+        Name
+      </label>
+      <div
+        className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+        onClick={[Function]}
+      >
+        <input
+          aria-invalid={false}
+          autoFocus={false}
+          className="MuiInputBase-input MuiInput-input"
+          disabled={false}
+          name="name"
+          onAnimationStart={[Function]}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          required={false}
+          type="text"
+          value=""
+        />
+      </div>
+      
+    </div>
+    <div
+      className="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+    >
+      <label
+        className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+        data-shrink={false}
+      >
+        Username
       </label>
       <div
         className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
@@ -59,7 +84,6 @@ exports[`<LoginPage /> should render without throwing an error and match snapsho
       >
         <input
           aria-invalid={false}
-          autoComplete="password"
           autoFocus={false}
           className="MuiInputBase-input MuiInput-input"
           disabled={false}
@@ -69,19 +93,35 @@ exports[`<LoginPage /> should render without throwing an error and match snapsho
           onChange={[Function]}
           onFocus={[Function]}
           required={false}
-          type="password"
+          type="text"
           value=""
         />
       </div>
       
     </div>
     <button
-      color="primary"
+      className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-button-2 MuiButton-containedPrimary"
       disabled={false}
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
       type="submit"
     >
-      Login
+      <span
+        className="MuiButton-label"
+      >
+        Create New User
+      </span>
     </button>
-  </form>
-</div>
+  </div>
+</form>
 `;

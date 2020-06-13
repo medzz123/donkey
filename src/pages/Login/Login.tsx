@@ -23,7 +23,7 @@ const Login: LoginPageType = () => {
               try {
                 await loginMutation({
                   variables: {
-                    email: values.username,
+                    username: values.username,
                     password: values.password,
                   },
                 });
@@ -68,7 +68,7 @@ const Login: LoginPageType = () => {
 
 Login.getInitialProps = async () => {
   return {
-    showLayout: false,
+    showLayout: true,
     meta: {
       title: 'Donkey',
       page: 'Login',

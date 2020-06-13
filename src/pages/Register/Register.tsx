@@ -1,5 +1,6 @@
 import React from 'react';
 import { RegisterPageType } from './Register.models';
+import { withAuth } from '@utils/withAuth';
 
 const Register: RegisterPageType = () => {
   return (
@@ -20,4 +21,4 @@ Register.getInitialProps = async () => {
   };
 };
 
-export default Register;
+export default withAuth(Register);

@@ -1,6 +1,5 @@
 import React from 'react';
 import { RegisterPageType } from './Register.models';
-import { withAuth } from '@utils/withAuth';
 import Cookie from 'js-cookie';
 import Router from 'next/router';
 
@@ -32,4 +31,4 @@ Register.getInitialProps = async () => {
   };
 };
 
-export default withAuth(Register);
+export default Register;

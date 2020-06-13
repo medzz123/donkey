@@ -2,59 +2,44 @@
 
 exports[`<LoginPage /> should render without throwing an error and match snapshot 1`] = `
 <div
-  className="sc-AxjAm cRUUZD"
+  className="sc-AxjAm fzbXpb"
 >
-  <div
-    className="sc-AxirZ kLeZJA"
+  <h1
+    className="sc-AxirZ gKxylU"
   >
-    <div
-      className="sc-AxiKw bOTXee"
+    Welcome back!
+  </h1>
+  <form
+    action="#"
+    onReset={[Function]}
+    onSubmit={[Function]}
+  >
+    <input
+      name="username"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="Email"
+      type="text"
+      value=""
+    />
+    <p />
+    <input
+      autoComplete="password"
+      name="password"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="Password"
+      type="password"
+      value=""
+    />
+    <p />
+    <button
+      color="primary"
+      disabled={false}
+      type="submit"
     >
-      <h1
-        className="sc-AxhUy FJdZJ"
-      >
-        Welcome back!
-      </h1>
-      <form
-        action="#"
-        onReset={[Function]}
-        onSubmit={[Function]}
-      >
-        <input
-          name="username"
-          onBlur={[Function]}
-          onChange={[Function]}
-          placeholder="Email"
-          type="text"
-          value=""
-        />
-        <p />
-        <input
-          autoComplete="password"
-          name="password"
-          onBlur={[Function]}
-          onChange={[Function]}
-          placeholder="Password"
-          type="password"
-          value=""
-        />
-        <p />
-        <button
-          color="primary"
-          disabled={false}
-          type="submit"
-        >
-          Login
-        </button>
-      </form>
-    </div>
-  </div>
-  <div
-    className="sc-AxhCb iZKiLB"
-  >
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus explicabo suscipit eum velit omnis? Dicta alias asperiores fuga, illo commodi blanditiis dolor ipsa excepturi dolorem, recusandae suscipit pariatur minus earum!
-    </p>
-  </div>
+      Login
+    </button>
+  </form>
 </div>
 `;

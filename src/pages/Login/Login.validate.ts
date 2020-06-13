@@ -4,7 +4,7 @@ import { FormikErrors } from 'formik';
 export const validateLogIn = (values: LoginValues) => {
   const errors: FormikErrors<LoginValues> = {};
   if (!values.username) {
-    errors.username = 'Required';
+    errors.username = 'Username is required';
   }
 
   if (!values.password) {

@@ -5,6 +5,8 @@ import Head from 'next/head';
 import NextApp from 'next/app';
 
 import { ApolloProvider } from '@apollo/react-hooks';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import withData from '@utils/apollo-client';
 
@@ -23,6 +25,11 @@ const App = ({ Component, pageProps, apollo }) => {
           />
         </Head>
         <GlobalStyles />
+
+        <ToastContainer
+          // @ts-ignore
+          position={toast.POSITION.BOTTOM_RIGHT}
+        />
         <Component {...pageProps} />
       </Layout>
     </ApolloProvider>

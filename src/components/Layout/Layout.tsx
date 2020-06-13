@@ -22,6 +22,7 @@ const Layout: React.FunctionComponent<LayoutProps> = (props) => {
             maxWidth: 300,
             display: 'flex',
             justifyContent: 'space-between',
+            marginBottom: 40,
           }}
         >
           <Link href="/">
@@ -32,6 +33,9 @@ const Layout: React.FunctionComponent<LayoutProps> = (props) => {
           </Link>
           <Link href="/register">
             <a>Register</a>
+          </Link>
+          <Link href="/home">
+            <a>Home</a>
           </Link>
         </nav>
       </header>

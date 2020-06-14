@@ -9,10 +9,10 @@ const Parts = () => {
     <div>
       <Grid direction="row" container={true}>
         <Typography variant="h4" style={{ marginRight: 20 }}>
-          Jobs
+          Parts
         </Typography>
         <Button type="button" variant="contained" color="primary">
-          Add new Job
+          Add new part
         </Button>
       </Grid>
       <Box mt={5} />

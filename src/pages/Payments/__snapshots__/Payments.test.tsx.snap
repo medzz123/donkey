@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Parts /> should render without throwing an error and match snapshot 1`] = `
+exports[`<Payments /> should render without throwing an error and match snapshot 1`] = `
 <div>
   <div
     className="MuiGrid-root MuiGrid-container"
@@ -13,7 +13,7 @@ exports[`<Parts /> should render without throwing an error and match snapshot 1`
         }
       }
     >
-      Parts
+      Payments
     </h4>
     <button
       className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
@@ -35,7 +35,7 @@ exports[`<Parts /> should render without throwing an error and match snapshot 1`
       <span
         className="MuiButton-label"
       >
-        Add new part
+        Clear a payment
       </span>
       <span
         className="MuiTouchRipple-root"
@@ -50,7 +50,7 @@ exports[`<Parts /> should render without throwing an error and match snapshot 1`
     style={
       Object {
         "height": 800,
-        "maxWidth": 1000,
+        "maxWidth": 940,
       }
     }
   >
@@ -64,7 +64,7 @@ exports[`<Parts /> should render without throwing an error and match snapshot 1`
       }
     >
       <div
-        aria-colcount={8}
+        aria-colcount={7}
         aria-rowcount={50}
         className="ReactVirtualized__Table MuiVirtualizedTable-table-3"
         role="grid"
@@ -104,7 +104,33 @@ exports[`<Parts /> should render without throwing an error and match snapshot 1`
               }
             >
               <span>
-                Part Code
+                Customer Id
+              </span>
+            </div>
+          </div>
+          <div
+            className="ReactVirtualized__Table__headerColumn"
+            role="columnheader"
+            style={
+              Object {
+                "WebkitFlex": "0 1 150px",
+                "flex": "0 1 150px",
+                "msFlex": "0 1 150px",
+              }
+            }
+          >
+            <div
+              aria-sort={null}
+              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-6 MuiVirtualizedTable-flexContainer-2 MuiVirtualizedTable-noClick-7 MuiTableCell-alignLeft"
+              role="cell"
+              style={
+                Object {
+                  "height": 48,
+                }
+              }
+            >
+              <span>
+                Customer Name
               </span>
             </div>
           </div>
@@ -130,7 +156,7 @@ exports[`<Parts /> should render without throwing an error and match snapshot 1`
               }
             >
               <span>
-                Name
+                Job Number
               </span>
             </div>
           </div>
@@ -156,7 +182,7 @@ exports[`<Parts /> should render without throwing an error and match snapshot 1`
               }
             >
               <span>
-                Quantity
+                Amount
               </span>
             </div>
           </div>
@@ -182,7 +208,33 @@ exports[`<Parts /> should render without throwing an error and match snapshot 1`
               }
             >
               <span>
-                Price
+                Due Date
+              </span>
+            </div>
+          </div>
+          <div
+            className="ReactVirtualized__Table__headerColumn"
+            role="columnheader"
+            style={
+              Object {
+                "WebkitFlex": "0 1 150px",
+                "flex": "0 1 150px",
+                "msFlex": "0 1 150px",
+              }
+            }
+          >
+            <div
+              aria-sort={null}
+              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-6 MuiVirtualizedTable-flexContainer-2 MuiVirtualizedTable-noClick-7 MuiTableCell-alignLeft"
+              role="cell"
+              style={
+                Object {
+                  "height": 48,
+                }
+              }
+            >
+              <span>
+                Vehicle Model
               </span>
             </div>
           </div>
@@ -208,85 +260,7 @@ exports[`<Parts /> should render without throwing an error and match snapshot 1`
               }
             >
               <span>
-                Manufacturer
-              </span>
-            </div>
-          </div>
-          <div
-            className="ReactVirtualized__Table__headerColumn"
-            role="columnheader"
-            style={
-              Object {
-                "WebkitFlex": "0 1 120px",
-                "flex": "0 1 120px",
-                "msFlex": "0 1 120px",
-              }
-            }
-          >
-            <div
-              aria-sort={null}
-              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-6 MuiVirtualizedTable-flexContainer-2 MuiVirtualizedTable-noClick-7 MuiTableCell-alignLeft"
-              role="cell"
-              style={
-                Object {
-                  "height": 48,
-                }
-              }
-            >
-              <span>
-                Description
-              </span>
-            </div>
-          </div>
-          <div
-            className="ReactVirtualized__Table__headerColumn"
-            role="columnheader"
-            style={
-              Object {
-                "WebkitFlex": "0 1 120px",
-                "flex": "0 1 120px",
-                "msFlex": "0 1 120px",
-              }
-            }
-          >
-            <div
-              aria-sort={null}
-              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-6 MuiVirtualizedTable-flexContainer-2 MuiVirtualizedTable-noClick-7 MuiTableCell-alignLeft"
-              role="cell"
-              style={
-                Object {
-                  "height": 48,
-                }
-              }
-            >
-              <span>
-                Vehicle Type
-              </span>
-            </div>
-          </div>
-          <div
-            className="ReactVirtualized__Table__headerColumn"
-            role="columnheader"
-            style={
-              Object {
-                "WebkitFlex": "0 1 120px",
-                "flex": "0 1 120px",
-                "msFlex": "0 1 120px",
-              }
-            }
-          >
-            <div
-              aria-sort={null}
-              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-6 MuiVirtualizedTable-flexContainer-2 MuiVirtualizedTable-noClick-7 MuiTableCell-alignLeft"
-              role="cell"
-              style={
-                Object {
-                  "height": 48,
-                }
-              }
-            >
-              <span>
-                Threshold
+                Status
               </span>
             </div>
           </div>

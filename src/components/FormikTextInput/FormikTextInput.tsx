@@ -3,17 +3,11 @@ import { useField } from 'formik';
 import React from 'react';
 
 import { useStyles } from './FormikInput.styles';
+import { FormikInputProps } from './FormikTextInput.models';
 
-const FormikTextInput = ({
-  label,
-  ...props
-}: {
-  name: string;
-  label?: string;
-  type?: string;
-  autoComplete?: string;
-}) => {
-  const [field, meta, helpers] = useField(props);
+const FormikTextInput: React.FunctionComponent<FormikInputProps> = (props) => {
+  const { name } = props;
+  const [field, meta, helpers] = useField(name);
 
   const error = meta.touched && !!meta.error;
 
@@ -24,7 +18,6 @@ const FormikTextInput = ({
       {...props}
       className={classes.input}
       error={error}
-      label={label}
       onChange={(e) => {
         helpers.setValue(e.target.value);
       }}

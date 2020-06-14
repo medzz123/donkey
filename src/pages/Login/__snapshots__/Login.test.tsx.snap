@@ -1,123 +1,188 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<LoginPage /> should render without throwing an error and match snapshot 1`] = `
-<div
-  className="sc-AxjAm SaElU"
+<main
+  className="MuiGrid-root makeStyles-root-1 MuiGrid-container"
 >
-  <h3
-    className="MuiTypography-root MuiTypography-h3"
-  >
-    Welcome back!
-  </h3>
-  <form
-    action="#"
-    onReset={[Function]}
-    onSubmit={[Function]}
+  <div
+    className="MuiGrid-root makeStyles-image-2 MuiGrid-item MuiGrid-grid-sm-4 MuiGrid-grid-md-7"
+  />
+  <div
+    className="MuiPaper-root MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-8 MuiGrid-grid-md-5 MuiPaper-elevation6"
   >
     <div
-      className="MuiFormControl-root MuiTextField-root makeStyles-input-1 MuiFormControl-fullWidth"
+      className="makeStyles-paper-3"
     >
-      <label
-        className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
-        data-shrink={false}
-      >
-        Email
-      </label>
       <div
-        className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
-        onClick={[Function]}
+        className="MuiAvatar-root MuiAvatar-circle makeStyles-avatar-4 MuiAvatar-colorDefault"
       >
-        <input
-          aria-invalid={false}
-          autoFocus={false}
-          className="MuiInputBase-input MuiInput-input"
-          disabled={false}
-          name="username"
-          onAnimationStart={[Function]}
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          required={false}
-          type="text"
-          value=""
-        />
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"
+          />
+        </svg>
       </div>
-      <p
-        className="MuiFormHelperText-root"
+      <h1
+        className="MuiTypography-root MuiTypography-h5"
       >
-        <span
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "&#8203;",
-            }
-          }
+        Sign in
+      </h1>
+      <form
+        action="#"
+        className="makeStyles-form-5"
+        noValidate={true}
+        onReset={[Function]}
+        onSubmit={[Function]}
+      >
+        <div
+          className="MuiFormControl-root MuiTextField-root makeStyles-input-7 MuiFormControl-fullWidth"
+        >
+          <label
+            className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined"
+            data-shrink={false}
+          >
+            Email
+          </label>
+          <div
+            className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
+            onClick={[Function]}
+          >
+            <input
+              aria-invalid={false}
+              autoFocus={false}
+              className="MuiInputBase-input MuiOutlinedInput-input"
+              disabled={false}
+              name="username"
+              onAnimationStart={[Function]}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              required={false}
+              type="text"
+              value=""
+            />
+            <fieldset
+              aria-hidden={true}
+              className="PrivateNotchedOutline-root-8 MuiOutlinedInput-notchedOutline"
+            >
+              <legend
+                className="PrivateNotchedOutline-legendLabelled-10"
+              >
+                <span>
+                  Email
+                </span>
+              </legend>
+            </fieldset>
+          </div>
+          <p
+            className="MuiFormHelperText-root MuiFormHelperText-contained"
+          >
+            <span
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "&#8203;",
+                }
+              }
+            />
+          </p>
+        </div>
+        <div
+          className="MuiBox-root MuiBox-root-12"
         />
-      </p>
-    </div>
-    <div
-      className="MuiFormControl-root MuiTextField-root makeStyles-input-1 MuiFormControl-fullWidth"
-    >
-      <label
-        className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
-        data-shrink={false}
-      >
-        Password
-      </label>
+        <div
+          className="MuiFormControl-root MuiTextField-root makeStyles-input-7 MuiFormControl-fullWidth"
+        >
+          <label
+            className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined"
+            data-shrink={false}
+          >
+            Password
+          </label>
+          <div
+            className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
+            onClick={[Function]}
+          >
+            <input
+              aria-invalid={false}
+              autoComplete="password"
+              autoFocus={false}
+              className="MuiInputBase-input MuiOutlinedInput-input"
+              disabled={false}
+              name="password"
+              onAnimationStart={[Function]}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              required={false}
+              type="password"
+              value=""
+            />
+            <fieldset
+              aria-hidden={true}
+              className="PrivateNotchedOutline-root-8 MuiOutlinedInput-notchedOutline"
+            >
+              <legend
+                className="PrivateNotchedOutline-legendLabelled-10"
+              >
+                <span>
+                  Password
+                </span>
+              </legend>
+            </fieldset>
+          </div>
+          <p
+            className="MuiFormHelperText-root MuiFormHelperText-contained"
+          >
+            <span
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "&#8203;",
+                }
+              }
+            />
+          </p>
+        </div>
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-submit-6 MuiButton-containedPrimary MuiButton-fullWidth"
+          disabled={false}
+          onBlur={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="submit"
+        >
+          <span
+            className="MuiButton-label"
+          >
+            Login
+          </span>
+        </button>
+      </form>
       <div
-        className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
-        onClick={[Function]}
+        className="MuiBox-root MuiBox-root-13"
       >
-        <input
-          aria-invalid={false}
-          autoComplete="password"
-          autoFocus={false}
-          className="MuiInputBase-input MuiInput-input"
-          disabled={false}
-          name="password"
-          onAnimationStart={[Function]}
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          required={false}
-          type="password"
-          value=""
-        />
+        <p
+          className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
+        >
+          Copyright © Donkey App 
+          2020
+          .
+        </p>
       </div>
-      <p
-        className="MuiFormHelperText-root"
-      >
-        <span
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "&#8203;",
-            }
-          }
-        />
-      </p>
     </div>
-    <button
-      className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
-      disabled={false}
-      onBlur={[Function]}
-      onDragLeave={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onKeyUp={[Function]}
-      onMouseDown={[Function]}
-      onMouseLeave={[Function]}
-      onMouseUp={[Function]}
-      onTouchEnd={[Function]}
-      onTouchMove={[Function]}
-      onTouchStart={[Function]}
-      tabIndex={0}
-      type="submit"
-    >
-      <span
-        className="MuiButton-label"
-      >
-        Login
-      </span>
-    </button>
-  </form>
-</div>
+  </div>
+</main>
 `;

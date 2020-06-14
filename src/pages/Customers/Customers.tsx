@@ -1,7 +1,9 @@
 import CreateCustomer from '@components/CreateCustomer';
 import { CreateCustomerRefs } from '@components/CreateCustomer/CreateCustomer.models';
+import CustomerDetails from '@components/CustomerDetails';
 import VirtualizedTable from '@components/VirtualizedTable';
 import { Box, Button, Grid, Paper, Typography } from '@material-ui/core';
+import Link from 'next/link';
 import React from 'react';
 
 import data from '../../mocks/jobs.json';
@@ -17,6 +19,7 @@ const Customers = () => {
     <div>
       <Grid direction="row" container={true}>
         <CreateCustomer onSuccess={() => console.log('Hey')} ref={modal} />
+        <CustomerDetails />
         <Typography variant="h4" style={{ marginRight: 20 }}>
           Customers
         </Typography>
@@ -28,6 +31,22 @@ const Customers = () => {
         >
           Add new Customer
         </Button>
+      </Grid>
+      <Box mt={5} />
+      <Grid
+        direction="row"
+        container={true}
+        style={{ width: 400, justifyContent: 'space-between' }}
+      >
+        <Link href="/customers/[uid]" as="/customers/1" scroll={false} passHref>
+          <a>Customer 1</a>
+        </Link>
+        <Link href="/customers/[uid]" as="/customers/2" scroll={false} passHref>
+          <a>Customer 2</a>
+        </Link>
+        <Link href="/customers/[uid]" as="/customers/3" scroll={false} passHref>
+          <a>Customer 3</a>
+        </Link>
       </Grid>
       <Box mt={5} />
       <Paper style={{ height: 800, maxWidth: 1000 }}>

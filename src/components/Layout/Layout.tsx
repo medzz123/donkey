@@ -125,7 +125,9 @@ const Layout: React.FunctionComponent<LayoutProps> = (props) => {
               <ListItemIcon>
                 <Apple
                   color={
-                    currentRoute === constants.routes.privateRoutes.customers
+                    currentRoute.includes(
+                      constants.routes.privateRoutes.customers
+                    )
                       ? 'primary'
                       : 'inherit'
                   }

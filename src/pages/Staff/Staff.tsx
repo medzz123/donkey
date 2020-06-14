@@ -60,7 +60,7 @@ const Staff: NextPage = () => {
         </Button>
       </div>
       <Divider className={classes.divider} />
-      <Paper style={{ height: 400, maxWidth: 1000 }}>
+      <Paper style={{ height: 432, maxWidth: 1000 }}>
         <VirtualizedTable
           rowCount={rows.length}
           rowGetter={({ index }) => rows[index]}

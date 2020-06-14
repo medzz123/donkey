@@ -26,7 +26,7 @@ const App = ({ Component, pageProps, apollo, router }) => {
   return (
     <ApolloProvider client={apollo}>
       <Head>
-        <title>{title}</title>
+        <title>{title} - Donkey</title>
         <meta charSet="utf-8" />
         <meta name="description" content="Your friendly donkey app!" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />

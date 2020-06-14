@@ -1,0 +1,319 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Parts /> should render without throwing an error and match snapshot 1`] = `
+<div>
+  <div
+    className="MuiGrid-root MuiGrid-container"
+  >
+    <h4
+      className="MuiTypography-root MuiTypography-h4"
+      style={
+        Object {
+          "marginRight": 20,
+        }
+      }
+    >
+      Jobs
+    </h4>
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+      disabled={false}
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        Add new Job
+      </span>
+      <span
+        className="MuiTouchRipple-root"
+      />
+    </button>
+  </div>
+  <div
+    className="MuiBox-root MuiBox-root-1"
+  />
+  <div
+    className="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
+    style={
+      Object {
+        "height": 800,
+        "maxWidth": 1000,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "height": 0,
+          "overflow": "visible",
+          "width": 0,
+        }
+      }
+    >
+      <div
+        aria-colcount={8}
+        aria-rowcount={50}
+        className="ReactVirtualized__Table MuiVirtualizedTable-table-3"
+        role="grid"
+        style={Object {}}
+      >
+        <div
+          className="ReactVirtualized__Table__headerRow MuiVirtualizedTable-tableRow-4 MuiVirtualizedTable-flexContainer-2"
+          role="row"
+          style={
+            Object {
+              "height": 48,
+              "overflow": "hidden",
+              "paddingRight": 0,
+              "width": 0,
+            }
+          }
+        >
+          <div
+            className="ReactVirtualized__Table__headerColumn"
+            role="columnheader"
+            style={
+              Object {
+                "WebkitFlex": "0 1 120px",
+                "flex": "0 1 120px",
+                "msFlex": "0 1 120px",
+              }
+            }
+          >
+            <div
+              aria-sort={null}
+              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-6 MuiVirtualizedTable-flexContainer-2 MuiVirtualizedTable-noClick-7 MuiTableCell-alignLeft"
+              role="cell"
+              style={
+                Object {
+                  "height": 48,
+                }
+              }
+            >
+              <span>
+                Part Code
+              </span>
+            </div>
+          </div>
+          <div
+            className="ReactVirtualized__Table__headerColumn"
+            role="columnheader"
+            style={
+              Object {
+                "WebkitFlex": "0 1 120px",
+                "flex": "0 1 120px",
+                "msFlex": "0 1 120px",
+              }
+            }
+          >
+            <div
+              aria-sort={null}
+              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-6 MuiVirtualizedTable-flexContainer-2 MuiVirtualizedTable-noClick-7 MuiTableCell-alignLeft"
+              role="cell"
+              style={
+                Object {
+                  "height": 48,
+                }
+              }
+            >
+              <span>
+                Name
+              </span>
+            </div>
+          </div>
+          <div
+            className="ReactVirtualized__Table__headerColumn"
+            role="columnheader"
+            style={
+              Object {
+                "WebkitFlex": "0 1 120px",
+                "flex": "0 1 120px",
+                "msFlex": "0 1 120px",
+              }
+            }
+          >
+            <div
+              aria-sort={null}
+              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-6 MuiVirtualizedTable-flexContainer-2 MuiVirtualizedTable-noClick-7 MuiTableCell-alignLeft"
+              role="cell"
+              style={
+                Object {
+                  "height": 48,
+                }
+              }
+            >
+              <span>
+                Quantity
+              </span>
+            </div>
+          </div>
+          <div
+            className="ReactVirtualized__Table__headerColumn"
+            role="columnheader"
+            style={
+              Object {
+                "WebkitFlex": "0 1 120px",
+                "flex": "0 1 120px",
+                "msFlex": "0 1 120px",
+              }
+            }
+          >
+            <div
+              aria-sort={null}
+              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-6 MuiVirtualizedTable-flexContainer-2 MuiVirtualizedTable-noClick-7 MuiTableCell-alignLeft"
+              role="cell"
+              style={
+                Object {
+                  "height": 48,
+                }
+              }
+            >
+              <span>
+                Price
+              </span>
+            </div>
+          </div>
+          <div
+            className="ReactVirtualized__Table__headerColumn"
+            role="columnheader"
+            style={
+              Object {
+                "WebkitFlex": "0 1 120px",
+                "flex": "0 1 120px",
+                "msFlex": "0 1 120px",
+              }
+            }
+          >
+            <div
+              aria-sort={null}
+              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-6 MuiVirtualizedTable-flexContainer-2 MuiVirtualizedTable-noClick-7 MuiTableCell-alignLeft"
+              role="cell"
+              style={
+                Object {
+                  "height": 48,
+                }
+              }
+            >
+              <span>
+                Manufacturer
+              </span>
+            </div>
+          </div>
+          <div
+            className="ReactVirtualized__Table__headerColumn"
+            role="columnheader"
+            style={
+              Object {
+                "WebkitFlex": "0 1 120px",
+                "flex": "0 1 120px",
+                "msFlex": "0 1 120px",
+              }
+            }
+          >
+            <div
+              aria-sort={null}
+              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-6 MuiVirtualizedTable-flexContainer-2 MuiVirtualizedTable-noClick-7 MuiTableCell-alignLeft"
+              role="cell"
+              style={
+                Object {
+                  "height": 48,
+                }
+              }
+            >
+              <span>
+                Description
+              </span>
+            </div>
+          </div>
+          <div
+            className="ReactVirtualized__Table__headerColumn"
+            role="columnheader"
+            style={
+              Object {
+                "WebkitFlex": "0 1 120px",
+                "flex": "0 1 120px",
+                "msFlex": "0 1 120px",
+              }
+            }
+          >
+            <div
+              aria-sort={null}
+              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-6 MuiVirtualizedTable-flexContainer-2 MuiVirtualizedTable-noClick-7 MuiTableCell-alignLeft"
+              role="cell"
+              style={
+                Object {
+                  "height": 48,
+                }
+              }
+            >
+              <span>
+                Vehicle Type
+              </span>
+            </div>
+          </div>
+          <div
+            className="ReactVirtualized__Table__headerColumn"
+            role="columnheader"
+            style={
+              Object {
+                "WebkitFlex": "0 1 120px",
+                "flex": "0 1 120px",
+                "msFlex": "0 1 120px",
+              }
+            }
+          >
+            <div
+              aria-sort={null}
+              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-6 MuiVirtualizedTable-flexContainer-2 MuiVirtualizedTable-noClick-7 MuiTableCell-alignLeft"
+              role="cell"
+              style={
+                Object {
+                  "height": 48,
+                }
+              }
+            >
+              <span>
+                Threshold
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-label="grid"
+          aria-readonly={null}
+          className="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
+          onScroll={[Function]}
+          role="rowgroup"
+          style={
+            Object {
+              "WebkitOverflowScrolling": "touch",
+              "boxSizing": "border-box",
+              "direction": "inherit",
+              "height": -48,
+              "overflowX": "hidden",
+              "overflowY": "auto",
+              "position": "relative",
+              "width": 0,
+              "willChange": "transform",
+            }
+          }
+          tabIndex={0}
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

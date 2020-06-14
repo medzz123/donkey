@@ -26,7 +26,7 @@ const CreateUser: React.FunctionComponent<CreateUserProps> = (props) => {
   };
 
   return (
-    <Modal open={open} handleClose={handleClose} aria-labelledby="create-user">
+    <Modal open={open} onClose={handleClose} title="Create User">
       <Formik
         initialValues={{ name: '', password: '', username: '' }}
         validate={validateCreateUser}
@@ -59,6 +59,7 @@ const CreateUser: React.FunctionComponent<CreateUserProps> = (props) => {
                 type="submit"
                 disabled={props.isSubmitting}
                 className={classes.button}
+                fullWidth={true}
               >
                 Create New User
               </Button>

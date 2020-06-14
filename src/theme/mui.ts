@@ -23,31 +23,22 @@ const theme = createMuiTheme({
   },
   palette: {
     common: {
-      black: '#232528',
+      black: '#171D1C',
       white: '#FFFCF9',
     },
     primary: {
       main: '#446DF6',
     },
     secondary: {
-      main: '#19857b',
+      main: '#FF715B',
     },
     error: {
       main: '#FF3366',
     },
     background: {
-      default: '#EDEDF4',
+      default: '#FBFBFB',
     },
   },
 });
 
 export default theme;
-
-// export const palette = {
-//   eireBlack: '#171D1C',
-//   cultured: '#FBFBFB',
-//   ceruleanBlue: '#5863F8',
-//   radicalRed: '#FF3366',
-//   carolinaBlue: '#20A4F3',
-//   bitterSweet: '#FF715B',
-// };

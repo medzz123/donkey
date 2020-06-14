@@ -4,9 +4,20 @@ import theme from '@theme/mui';
 export const useStyles = makeStyles({
   paper: {
     position: 'absolute',
-    width: 400,
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(2, 4, 3),
+    outline: 'none',
+    borderRadius: theme.spacing(1),
+  },
+  header: {
+    padding: theme.spacing(2, 0),
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  iconButton: { padding: 0 },
+  divider: {
+    margin: theme.spacing(2, -4),
   },
 });
 

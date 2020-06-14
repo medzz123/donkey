@@ -1,21 +1,17 @@
 import { logout } from '@domain/handlers/logout';
-import AppBar from '@material-ui/core/AppBar';
-import Divider from '@material-ui/core/Divider';
-import Drawer from '@material-ui/core/Drawer';
-import IconButton from '@material-ui/core/IconButton';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import { useTheme } from '@material-ui/core/styles';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import Home from '@material-ui/icons/Home';
-import Lock from '@material-ui/icons/Lock';
-import MenuIcon from '@material-ui/icons/Menu';
-import Polymer from '@material-ui/icons/Polymer';
+import {
+  AppBar,
+  Divider,
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Toolbar,
+  Typography,
+} from '@material-ui/core';
+import { ChevronLeft, ExitToApp, Home, Menu, Person } from '@material-ui/icons';
 import clsx from 'clsx';
 import Link from 'next/link';
 import * as React from 'react';
@@ -27,7 +23,6 @@ const Layout: React.FunctionComponent<LayoutProps> = (props) => {
   const { children, showLayout } = props;
 
   const classes = useStyles();
-  const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
@@ -59,7 +54,7 @@ const Layout: React.FunctionComponent<LayoutProps> = (props) => {
               [classes.hide]: open,
             })}
           >
-            <MenuIcon />
+            <Menu />
           </IconButton>
           <Typography variant="h6" noWrap>
             The Donkey App
@@ -81,11 +76,7 @@ const Layout: React.FunctionComponent<LayoutProps> = (props) => {
       >
         <div className={classes.toolbar}>
           <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'rtl' ? (
-              <ChevronRightIcon />
-            ) : (
-              <ChevronLeftIcon />
-            )}
+            <ChevronLeft />
           </IconButton>
         </div>
         <Divider />
@@ -101,7 +92,7 @@ const Layout: React.FunctionComponent<LayoutProps> = (props) => {
           <Link href="/login">
             <ListItem button>
               <ListItemIcon>
-                <Polymer />
+                <Person />
               </ListItemIcon>
               <ListItemText primary="Login" />
             </ListItem>
@@ -111,7 +102,7 @@ const Layout: React.FunctionComponent<LayoutProps> = (props) => {
         <List>
           <ListItem button onClick={logout}>
             <ListItemIcon>
-              <Lock />
+              <ExitToApp />
             </ListItemIcon>
             <ListItemText primary="Logout" />
           </ListItem>

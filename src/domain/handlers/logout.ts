@@ -3,5 +3,5 @@ import Router from 'next/router';
 
 export const logout = () => {
   Cookie.remove('token');
-  Router.push('/login');
+  Router.reload();
 };

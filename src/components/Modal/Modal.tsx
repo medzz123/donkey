@@ -1,17 +1,36 @@
-import { Modal as MuiModal } from '@material-ui/core';
+import {
+  Divider,
+  IconButton,
+  Modal as MuiModal,
+  Typography,
+} from '@material-ui/core';
+import { ClearRounded } from '@material-ui/icons';
 import React from 'react';
 
 import { ModalProps } from './Modal.models';
 import { modalStyle, useStyles } from './Modal.styles';
 
 const Modal: React.FunctionComponent<ModalProps> = (props) => {
-  const { children, handleClose } = props;
+  const { children, title, onClose } = props;
   const classes = useStyles();
 
   return (
-    <MuiModal onClose={handleClose} {...props}>
+    <MuiModal {...props} aria-labelledby={title}>
       <div style={modalStyle} className={classes.paper}>
-        {children}
+        <React.Fragment>
+          <div className={classes.header}>
+            <Typography variant="h5">{title}</Typography>
+            <IconButton
+              type="button"
+              className={classes.iconButton}
+              onClick={onClose}
+            >
+              <ClearRounded />
+            </IconButton>
+          </div>
+          <Divider className={classes.divider} />
+          {children}
+        </React.Fragment>
       </div>
     </MuiModal>
   );

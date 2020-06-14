@@ -1,18 +1,19 @@
 import { useMutation } from '@apollo/react-hooks';
 import FormikTextInput from '@components/FormikTextInput';
 import { LOGIN_MUTATION } from '@domain/mutations/auth';
+import { ME_QUERY } from '@domain/queries/user';
 import { Button, Typography } from '@material-ui/core';
+import redirect from '@utils/redirect';
 import { Form, Formik } from 'formik';
 import Cookie from 'js-cookie';
 import Router from 'next/router';
 import React from 'react';
 import { toast } from 'react-toastify';
 
-import { LoginPageType } from './Login.models';
 import { Wrapper } from './Login.styles';
 import { validateLogIn } from './Login.validate';
 
-const Login: LoginPageType = () => {
+const Login = () => {
   const [loginMutation] = useMutation(LOGIN_MUTATION);
 
   const notify = () => {
@@ -35,7 +36,7 @@ const Login: LoginPageType = () => {
             });
 
             Cookie.set('token', response.data.loginUser.token);
-            Router.push('/register');
+            Router.reload();
           } catch (e) {
             notify();
             console.log('Login failed', e);
@@ -66,7 +67,18 @@ const Login: LoginPageType = () => {
   );
 };
 
-Login.getInitialProps = async () => {
+Login.getInitialProps = async (ctx) => {
+  try {
+    const response = await ctx.apolloClient.query({ query: ME_QUERY });
+    if (response?.data?.me) {
+      redirect(ctx, '/home');
+    } else {
+      console.log('Stating in login');
+    }
+  } catch (err) {
+    console.log('Stating in login');
+  }
+
   return {
     showLayout: false,
     meta: {

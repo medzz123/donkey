@@ -1,3 +1,5 @@
+import CreateCustomer from '@components/CreateCustomer';
+import { CreateCustomerRefs } from '@components/CreateCustomer/CreateCustomer.models';
 import VirtualizedTable from '@components/VirtualizedTable';
 import { Box, Button, Grid, Paper, Typography } from '@material-ui/core';
 import React from 'react';
@@ -5,13 +7,25 @@ import React from 'react';
 import data from '../../mocks/jobs.json';
 
 const Customers = () => {
+  const modal = React.useRef<CreateCustomerRefs>(null);
+
+  const openModal = () => {
+    modal.current?.handleOpen();
+  };
+
   return (
     <div>
       <Grid direction="row" container={true}>
+        <CreateCustomer onSuccess={() => console.log('Hey')} ref={modal} />
         <Typography variant="h4" style={{ marginRight: 20 }}>
           Customers
         </Typography>
-        <Button type="button" variant="contained" color="primary">
+        <Button
+          type="button"
+          variant="contained"
+          color="primary"
+          onClick={openModal}
+        >
           Add new Customer
         </Button>
       </Grid>

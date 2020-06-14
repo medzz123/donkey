@@ -19,6 +19,7 @@ exports[`<Customers /> should render without throwing an error and match snapsho
       className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
       disabled={false}
       onBlur={[Function]}
+      onClick={[Function]}
       onDragLeave={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
@@ -43,7 +44,7 @@ exports[`<Customers /> should render without throwing an error and match snapsho
     </button>
   </div>
   <div
-    className="MuiBox-root MuiBox-root-1"
+    className="MuiBox-root MuiBox-root-8"
   />
   <div
     className="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
@@ -66,12 +67,12 @@ exports[`<Customers /> should render without throwing an error and match snapsho
       <div
         aria-colcount={8}
         aria-rowcount={50}
-        className="ReactVirtualized__Table MuiVirtualizedTable-table-3"
+        className="ReactVirtualized__Table MuiVirtualizedTable-table-10"
         role="grid"
         style={Object {}}
       >
         <div
-          className="ReactVirtualized__Table__headerRow MuiVirtualizedTable-tableRow-4 MuiVirtualizedTable-flexContainer-2"
+          className="ReactVirtualized__Table__headerRow MuiVirtualizedTable-tableRow-11 MuiVirtualizedTable-flexContainer-9"
           role="row"
           style={
             Object {
@@ -95,7 +96,7 @@ exports[`<Customers /> should render without throwing an error and match snapsho
           >
             <div
               aria-sort={null}
-              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-6 MuiVirtualizedTable-flexContainer-2 MuiVirtualizedTable-noClick-7 MuiTableCell-alignLeft"
+              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-13 MuiVirtualizedTable-flexContainer-9 MuiVirtualizedTable-noClick-14 MuiTableCell-alignLeft"
               role="cell"
               style={
                 Object {
@@ -121,7 +122,7 @@ exports[`<Customers /> should render without throwing an error and match snapsho
           >
             <div
               aria-sort={null}
-              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-6 MuiVirtualizedTable-flexContainer-2 MuiVirtualizedTable-noClick-7 MuiTableCell-alignLeft"
+              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-13 MuiVirtualizedTable-flexContainer-9 MuiVirtualizedTable-noClick-14 MuiTableCell-alignLeft"
               role="cell"
               style={
                 Object {
@@ -147,7 +148,7 @@ exports[`<Customers /> should render without throwing an error and match snapsho
           >
             <div
               aria-sort={null}
-              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-6 MuiVirtualizedTable-flexContainer-2 MuiVirtualizedTable-noClick-7 MuiTableCell-alignLeft"
+              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-13 MuiVirtualizedTable-flexContainer-9 MuiVirtualizedTable-noClick-14 MuiTableCell-alignLeft"
               role="cell"
               style={
                 Object {
@@ -173,7 +174,7 @@ exports[`<Customers /> should render without throwing an error and match snapsho
           >
             <div
               aria-sort={null}
-              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-6 MuiVirtualizedTable-flexContainer-2 MuiVirtualizedTable-noClick-7 MuiTableCell-alignLeft"
+              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-13 MuiVirtualizedTable-flexContainer-9 MuiVirtualizedTable-noClick-14 MuiTableCell-alignLeft"
               role="cell"
               style={
                 Object {
@@ -199,7 +200,7 @@ exports[`<Customers /> should render without throwing an error and match snapsho
           >
             <div
               aria-sort={null}
-              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-6 MuiVirtualizedTable-flexContainer-2 MuiVirtualizedTable-noClick-7 MuiTableCell-alignLeft"
+              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-13 MuiVirtualizedTable-flexContainer-9 MuiVirtualizedTable-noClick-14 MuiTableCell-alignLeft"
               role="cell"
               style={
                 Object {
@@ -225,7 +226,7 @@ exports[`<Customers /> should render without throwing an error and match snapsho
           >
             <div
               aria-sort={null}
-              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-6 MuiVirtualizedTable-flexContainer-2 MuiVirtualizedTable-noClick-7 MuiTableCell-alignLeft"
+              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-13 MuiVirtualizedTable-flexContainer-9 MuiVirtualizedTable-noClick-14 MuiTableCell-alignLeft"
               role="cell"
               style={
                 Object {
@@ -251,7 +252,7 @@ exports[`<Customers /> should render without throwing an error and match snapsho
           >
             <div
               aria-sort={null}
-              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-6 MuiVirtualizedTable-flexContainer-2 MuiVirtualizedTable-noClick-7 MuiTableCell-alignLeft"
+              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-13 MuiVirtualizedTable-flexContainer-9 MuiVirtualizedTable-noClick-14 MuiTableCell-alignLeft"
               role="cell"
               style={
                 Object {
@@ -277,7 +278,7 @@ exports[`<Customers /> should render without throwing an error and match snapsho
           >
             <div
               aria-sort={null}
-              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-6 MuiVirtualizedTable-flexContainer-2 MuiVirtualizedTable-noClick-7 MuiTableCell-alignLeft"
+              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-13 MuiVirtualizedTable-flexContainer-9 MuiVirtualizedTable-noClick-14 MuiTableCell-alignLeft"
               role="cell"
               style={
                 Object {

@@ -12,7 +12,7 @@ import { toast, ToastContainer } from 'react-toastify';
 
 import Layout from '../src/components/Layout/Layout';
 
-const App = ({ Component, pageProps, apollo }) => {
+const App = ({ Component, pageProps, apollo, router }) => {
   const { meta, showLayout } = pageProps;
 
   React.useEffect(() => {
@@ -34,7 +34,7 @@ const App = ({ Component, pageProps, apollo }) => {
 
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Layout showLayout={showLayout || false}>
+        <Layout showLayout={showLayout || false} currentRoute={router.route}>
           <ToastContainer
             // @ts-ignore
             position={toast.POSITION.BOTTOM_RIGHT}

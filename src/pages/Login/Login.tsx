@@ -1,5 +1,6 @@
 import { useMutation } from '@apollo/react-hooks';
 import FormikTextInput from '@components/FormikTextInput';
+import constants from '@domain/constants';
 import { LOGIN_MUTATION } from '@domain/mutations/auth';
 import { ME_QUERY } from '@domain/queries/user';
 import { Button, Typography } from '@material-ui/core';
@@ -71,7 +72,7 @@ Login.getInitialProps = async (ctx) => {
   try {
     const response = await ctx.apolloClient.query({ query: ME_QUERY });
     if (response?.data?.me) {
-      redirect(ctx, '/home');
+      redirect(ctx, constants.routes.privateRoutes.staff);
     } else {
       console.log('Stating in login');
     }

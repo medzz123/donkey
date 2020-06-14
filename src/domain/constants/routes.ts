@@ -4,7 +4,11 @@ const publicRoutes = {
 };
 
 const privateRoutes = {
-  home: '/',
+  home: '/home',
+  staff: '/staff',
+  parts: '/parts',
+  jobs: '/jobs',
+  payments: '/payments',
 };
 
 export default { publicRoutes, privateRoutes };

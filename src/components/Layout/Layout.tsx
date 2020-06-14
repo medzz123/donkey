@@ -1,3 +1,4 @@
+import constants from '@domain/constants';
 import { logout } from '@domain/handlers/logout';
 import {
   AppBar,
@@ -11,7 +12,16 @@ import {
   Toolbar,
   Typography,
 } from '@material-ui/core';
-import { ChevronLeft, ExitToApp, Home, Menu, Person } from '@material-ui/icons';
+import {
+  ChevronLeft,
+  Dashboard,
+  ExitToApp,
+  ListAlt,
+  Menu,
+  Payment,
+  Person,
+  Store,
+} from '@material-ui/icons';
 import clsx from 'clsx';
 import Link from 'next/link';
 import * as React from 'react';
@@ -20,7 +30,7 @@ import { LayoutProps } from './Layout.models';
 import { useStyles } from './Layout.styles';
 
 const Layout: React.FunctionComponent<LayoutProps> = (props) => {
-  const { children, showLayout } = props;
+  const { children, showLayout, currentRoute } = props;
 
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
@@ -81,20 +91,74 @@ const Layout: React.FunctionComponent<LayoutProps> = (props) => {
         </div>
         <Divider />
         <List>
-          <Link href="/home">
+          <Link href={constants.routes.privateRoutes.home}>
             <ListItem button>
               <ListItemIcon>
-                <Home />
+                <Dashboard
+                  color={
+                    currentRoute === constants.routes.privateRoutes.home
+                      ? 'primary'
+                      : 'inherit'
+                  }
+                />
               </ListItemIcon>
               <ListItemText primary="Home" />
             </ListItem>
           </Link>
-          <Link href="/login">
+          <Link href={constants.routes.privateRoutes.staff}>
             <ListItem button>
               <ListItemIcon>
-                <Person />
+                <Person
+                  color={
+                    currentRoute === constants.routes.privateRoutes.staff
+                      ? 'primary'
+                      : 'inherit'
+                  }
+                />
               </ListItemIcon>
-              <ListItemText primary="Login" />
+              <ListItemText primary="Users" />
+            </ListItem>
+          </Link>
+          <Link href={constants.routes.privateRoutes.jobs}>
+            <ListItem button>
+              <ListItemIcon>
+                <ListAlt
+                  color={
+                    currentRoute === constants.routes.privateRoutes.jobs
+                      ? 'primary'
+                      : 'inherit'
+                  }
+                />
+              </ListItemIcon>
+              <ListItemText primary="Jobs" />
+            </ListItem>
+          </Link>
+          <Link href={constants.routes.privateRoutes.parts}>
+            <ListItem button>
+              <ListItemIcon>
+                <Store
+                  color={
+                    currentRoute === constants.routes.privateRoutes.parts
+                      ? 'primary'
+                      : 'inherit'
+                  }
+                />
+              </ListItemIcon>
+              <ListItemText primary="Parts" />
+            </ListItem>
+          </Link>
+          <Link href={constants.routes.privateRoutes.payments}>
+            <ListItem button>
+              <ListItemIcon>
+                <Payment
+                  color={
+                    currentRoute === constants.routes.privateRoutes.payments
+                      ? 'primary'
+                      : 'inherit'
+                  }
+                />
+              </ListItemIcon>
+              <ListItemText primary="Payments" />
             </ListItem>
           </Link>
         </List>
@@ -102,7 +166,7 @@ const Layout: React.FunctionComponent<LayoutProps> = (props) => {
         <List>
           <ListItem button onClick={logout}>
             <ListItemIcon>
-              <ExitToApp />
+              <ExitToApp color="error" />
             </ListItemIcon>
             <ListItemText primary="Logout" />
           </ListItem>

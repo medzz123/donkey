@@ -1,24 +1,24 @@
 import { Typography } from '@material-ui/core';
 import React from 'react';
 
-const Home = () => {
+const Payments = () => {
   return (
     <div>
       <Typography variant="h1">Da Lord</Typography>
-      Dis da home page boy!
+      Dis da Payments page boy!
     </div>
   );
 };
 
-Home.getInitialProps = async () => {
+Payments.getInitialProps = async () => {
   return {
     showLayout: true,
     meta: {
       title: 'Donkey',
-      page: 'Home',
+      page: 'Payments',
       description: 'Your friendly donkey app!',
     },
   };
 };
 
-export default Home;
+export default Payments;

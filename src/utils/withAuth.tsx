@@ -1,3 +1,4 @@
+import constants from '@domain/constants';
 import { ME_QUERY } from '@domain/queries/user';
 import React from 'react';
 
@@ -10,7 +11,7 @@ export const withAuth = (C) => {
       try {
         const response = await apolloClient.query({ query: ME_QUERY });
         if (!response || !response.data || !response.data.me) {
-          redirect(ctx, '/login');
+          redirect(ctx, constants.routes.publicRoutes.login);
           return {
             me: null,
           };
@@ -21,7 +22,7 @@ export const withAuth = (C) => {
           ...pageProps,
         };
       } catch (err) {
-        redirect(ctx, '/login');
+        redirect(ctx, constants.routes.privateRoutes.staff);
         return {
           me: null,
         };

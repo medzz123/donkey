@@ -6,7 +6,7 @@ import Layout from '.';
 describe('<Layout />', () => {
   it('should wrap children with the layout', () => {
     const testRenderer = TestRenderer.create(
-      <Layout showLayout={true}>
+      <Layout showLayout={true} currentRoute="/home">
         <div>Hi</div>
       </Layout>
     );
@@ -15,7 +15,7 @@ describe('<Layout />', () => {
 
   it('should render children without the layout', () => {
     const testRenderer = TestRenderer.create(
-      <Layout showLayout={false}>
+      <Layout showLayout={false} currentRoute="/home">
         <div>Hi</div>
       </Layout>
     );

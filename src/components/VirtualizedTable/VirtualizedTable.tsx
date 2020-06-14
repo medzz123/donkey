@@ -32,14 +32,6 @@ const MuiVirtualizedTable: React.FunctionComponent<MuiVirtualizedTableProps> = (
   };
 
   const cellRenderer: TableCellRenderer = ({ cellData, columnIndex }) => {
-    if (cellData === null) {
-      return '';
-    }
-
-    if (React.isValidElement(cellData)) {
-      return cellData;
-    }
-
     return (
       <TableCell
         component="div"

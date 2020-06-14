@@ -9,7 +9,8 @@
     "lint": "eslint '*/**/*.{ts,tsx}'",
     "lint:fix": "yarn lint --fix",
     "test": "jest",
-    "ts": "tsc --noEmit"
+    "ts": "tsc --noEmit",
+    "test:all": "yarn ts && yarn lint && yarn test"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.5",

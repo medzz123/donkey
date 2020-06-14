@@ -1,10 +1,11 @@
 import { useQuery } from '@apollo/react-hooks';
 import CreateUser from '@components/CreateUser';
-import UsersTable from '@components/UsersTable';
+import VirtualizedTable from '@components/VirtualizedTable';
 import { USERS_LIST_QUERY } from '@domain/queries/user';
-import { Button } from '@material-ui/core';
+import { Button, IconButton, Paper } from '@material-ui/core';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
+import { Edit } from '@material-ui/icons';
 import { withAuth } from '@utils/withAuth';
 import { NextPage } from 'next';
 import React from 'react';
@@ -31,7 +32,16 @@ const Staff: NextPage = () => {
       return [];
     }
 
-    return data.users;
+    return data.users.map((user) => ({
+      ...user,
+      role: 'Admin',
+      rate: '£1.75',
+      edit: (
+        <IconButton>
+          <Edit color="secondary" />
+        </IconButton>
+      ),
+    }));
   }, [loading, networkStatus]);
 
   const onCreateUser = () => {
@@ -54,7 +64,39 @@ const Staff: NextPage = () => {
         </Button>
       </div>
       <Divider className={classes.divider} />
-      <UsersTable data={rows} />
+      <Paper style={{ height: 400, maxWidth: 1000 }}>
+        <VirtualizedTable
+          rowCount={rows.length}
+          rowGetter={({ index }) => rows[index]}
+          columns={[
+            {
+              width: 200,
+              label: 'Name',
+              dataKey: 'name',
+            },
+            {
+              width: 200,
+              label: 'Username',
+              dataKey: 'username',
+            },
+            {
+              width: 200,
+              label: 'Role',
+              dataKey: 'role',
+            },
+            {
+              width: 200,
+              label: 'Rate',
+              dataKey: 'rate',
+            },
+            {
+              width: 200,
+              label: 'Edit',
+              dataKey: 'edit',
+            },
+          ]}
+        />
+      </Paper>
       <CreateUser
         onSuccess={onCreateUser}
         open={open}

@@ -9,6 +9,7 @@ const privateRoutes = {
   parts: '/parts',
   jobs: '/jobs',
   payments: '/payments',
+  customers: '/customers',
 };
 
 export default { publicRoutes, privateRoutes };

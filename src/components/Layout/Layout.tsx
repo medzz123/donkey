@@ -13,6 +13,7 @@ import {
   Typography,
 } from '@material-ui/core';
 import {
+  Apple,
   ChevronLeft,
   Dashboard,
   ExitToApp,
@@ -111,6 +112,20 @@ const Layout: React.FunctionComponent<LayoutProps> = (props) => {
                 <Person
                   color={
                     currentRoute === constants.routes.privateRoutes.staff
+                      ? 'primary'
+                      : 'inherit'
+                  }
+                />
+              </ListItemIcon>
+              <ListItemText primary="Users" />
+            </ListItem>
+          </Link>{' '}
+          <Link href={constants.routes.privateRoutes.customers}>
+            <ListItem button>
+              <ListItemIcon>
+                <Apple
+                  color={
+                    currentRoute === constants.routes.privateRoutes.customers
                       ? 'primary'
                       : 'inherit'
                   }

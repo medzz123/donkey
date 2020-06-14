@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`< FormikSelect /> should render without throwing an error and match snapshot 1`] = `
+<div
+  className="makeStyles-select-1"
+>
+  <div
+    className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth"
+    data={
+      Array [
+        Object {
+          "label": "Buga",
+          "value": "Uga",
+        },
+      ]
+    }
+    onClick={[Function]}
+  >
+    <div
+      aria-haspopup="listbox"
+      aria-labelledby="mui-component-select-Test"
+      className="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
+      id="mui-component-select-Test"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseDown={[Function]}
+      role="button"
+      tabIndex={0}
+    >
+      <span
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "&#8203;",
+          }
+        }
+      />
+    </div>
+    <input
+      aria-hidden={true}
+      className="MuiSelect-nativeInput"
+      name="Test"
+      onAnimationStart={[Function]}
+      onChange={[Function]}
+      tabIndex={-1}
+    />
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSelect-icon"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+    </svg>
+  </div>
+  <p
+    className="MuiFormHelperText-root"
+  >
+    <span
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "&#8203;",
+        }
+      }
+    />
+  </p>
+</div>
+`;

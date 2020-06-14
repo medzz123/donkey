@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`< FormikTextInput /> should render without throwing an error and match snapshot 1`] = `
+<div
+  className="MuiFormControl-root MuiTextField-root makeStyles-input-1 MuiFormControl-fullWidth"
+>
+  <div
+    className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+    onClick={[Function]}
+  >
+    <input
+      aria-invalid={false}
+      autoFocus={false}
+      className="MuiInputBase-input MuiInput-input"
+      disabled={false}
+      name="Test"
+      onAnimationStart={[Function]}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      required={false}
+      type="text"
+    />
+  </div>
+  <p
+    className="MuiFormHelperText-root"
+  >
+    <span
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "&#8203;",
+        }
+      }
+    />
+  </p>
+</div>
+`;

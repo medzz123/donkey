@@ -1,10 +1,14 @@
-import Paper from '@material-ui/core/Paper';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
+import {
+  IconButton,
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+} from '@material-ui/core';
+import { Edit } from '@material-ui/icons';
 import React from 'react';
 
 import { UsersTableProps } from './UsersTable.models';
@@ -22,6 +26,9 @@ const UsersTable: React.FunctionComponent<UsersTableProps> = (props) => {
           <TableRow>
             <TableCell>Name</TableCell>
             <TableCell>Username</TableCell>
+            <TableCell>Role</TableCell>
+            <TableCell>Rate</TableCell>
+            <TableCell>Edit</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -31,6 +38,13 @@ const UsersTable: React.FunctionComponent<UsersTableProps> = (props) => {
                 {row.name}
               </TableCell>
               <TableCell>{row.username}</TableCell>
+              <TableCell>Ugendo</TableCell>
+              <TableCell>£10.5</TableCell>
+              <TableCell>
+                <IconButton>
+                  <Edit color="secondary" />
+                </IconButton>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

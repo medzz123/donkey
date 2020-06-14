@@ -1,4 +1,5 @@
 import { useMutation } from '@apollo/react-hooks';
+import FormikSelect from '@components/FormikSelect';
 import FormikTextInput from '@components/FormikTextInput';
 import Modal from '@components/Modal';
 import { CREATE_USER_MUTATION } from '@domain/mutations/user';
@@ -28,7 +29,13 @@ const CreateUser: React.FunctionComponent<CreateUserProps> = (props) => {
   return (
     <Modal open={open} onClose={handleClose} title="Create User">
       <Formik
-        initialValues={{ name: '', password: '', username: '' }}
+        initialValues={{
+          name: '',
+          password: '',
+          username: '',
+          role: 'Ugendo',
+          rate: '',
+        }}
         validate={validateCreateUser}
         onSubmit={async (values, actions) => {
           try {
@@ -53,6 +60,15 @@ const CreateUser: React.FunctionComponent<CreateUserProps> = (props) => {
               <FormikTextInput name="name" label="Name" />
               <FormikTextInput name="username" label="Username" />
               <FormikTextInput name="password" label="Password" />
+              <FormikSelect
+                name="role"
+                label="Role"
+                data={[
+                  { value: 'Ugendo', label: 'Bugendo' },
+                  { value: 'Nintendo', label: 'Suckendo' },
+                ]}
+              />
+              <FormikTextInput name="rate" label="Rate" />
               <Button
                 variant="contained"
                 color="primary"

@@ -16,5 +16,13 @@ export const validateCreateUser = (values: UserValues) => {
     errors.name = 'Enter a name';
   }
 
+  if (!values.role) {
+    errors.role = 'Enter a role';
+  }
+
+  if (!values.rate) {
+    errors.rate = 'Enter a rate';
+  }
+
   return errors;
 };

@@ -13,7 +13,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import Layout from '../src/components/Layout/Layout';
 
 const App = ({ Component, pageProps, apollo, router }) => {
-  const { meta, showLayout } = pageProps;
+  const { title = 'Donkey', showLayout = false } = pageProps;
 
   React.useEffect(() => {
     // Remove the server-side injected CSS.
@@ -26,15 +26,20 @@ const App = ({ Component, pageProps, apollo, router }) => {
   return (
     <ApolloProvider client={apollo}>
       <Head>
-        <title>{meta?.title || 'Donkey'}</title>
+        <title>{title}</title>
         <meta charSet="utf-8" />
+        <meta name="description" content="Your friendly donkey app!" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
 
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Layout showLayout={showLayout || false} currentRoute={router.route}>
+        <Layout
+          showLayout={showLayout}
+          currentRoute={router.route}
+          title={title}
+        >
           <ToastContainer
             // @ts-ignore
             position={toast.POSITION.BOTTOM_RIGHT}

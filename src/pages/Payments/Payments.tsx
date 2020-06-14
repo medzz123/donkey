@@ -13,11 +13,7 @@ const Payments = () => {
 Payments.getInitialProps = async () => {
   return {
     showLayout: true,
-    meta: {
-      title: 'Donkey',
-      page: 'Payments',
-      description: 'Your friendly donkey app!',
-    },
+    title: 'Payments',
   };
 };
 

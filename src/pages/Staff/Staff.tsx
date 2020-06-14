@@ -67,11 +67,7 @@ const Staff: NextPage = () => {
 Staff.getInitialProps = async () => {
   return {
     showLayout: true,
-    meta: {
-      title: 'Donkey',
-      page: 'Staff',
-      description: 'Your friendly donkey app!',
-    },
+    title: 'Staff',
   };
 };
 

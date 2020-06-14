@@ -30,7 +30,7 @@ import { LayoutProps } from './Layout.models';
 import { useStyles } from './Layout.styles';
 
 const Layout: React.FunctionComponent<LayoutProps> = (props) => {
-  const { children, showLayout, currentRoute } = props;
+  const { children, showLayout, currentRoute, title } = props;
 
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
@@ -67,7 +67,7 @@ const Layout: React.FunctionComponent<LayoutProps> = (props) => {
             <Menu />
           </IconButton>
           <Typography variant="h6" noWrap>
-            The Donkey App
+            Donkey - {title && title}
           </Typography>
         </Toolbar>
       </AppBar>

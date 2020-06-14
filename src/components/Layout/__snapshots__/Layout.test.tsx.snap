@@ -53,7 +53,7 @@ exports[`<Layout /> should wrap children with the layout 1`] = `
       <h6
         className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap"
       >
-        The Donkey App
+        Donkey - 
       </h6>
     </div>
   </header>

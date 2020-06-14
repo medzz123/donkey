@@ -13,11 +13,7 @@ const Parts = () => {
 Parts.getInitialProps = async () => {
   return {
     showLayout: true,
-    meta: {
-      title: 'Donkey',
-      page: 'Parts',
-      description: 'Your friendly donkey app!',
-    },
+    title: 'Parts',
   };
 };
 

@@ -1,8 +1,6 @@
 import { useMutation } from '@apollo/react-hooks';
 import FormikTextInput from '@components/FormikTextInput';
-import constants from '@domain/constants';
 import { LOGIN_MUTATION } from '@domain/mutations/auth';
-import { ME_QUERY } from '@domain/queries/user';
 import {
   Avatar,
   Box,
@@ -12,7 +10,6 @@ import {
   Typography,
 } from '@material-ui/core';
 import { LockOutlined } from '@material-ui/icons';
-import redirect from '@utils/redirect';
 import { Form, Formik } from 'formik';
 import Cookie from 'js-cookie';
 import Router from 'next/router';
@@ -101,25 +98,10 @@ const Login = () => {
   );
 };
 
-Login.getInitialProps = async (ctx) => {
-  try {
-    const response = await ctx.apolloClient.query({ query: ME_QUERY });
-    if (response?.data?.me) {
-      redirect(ctx, constants.routes.privateRoutes.staff);
-    } else {
-      console.log('Stating in login');
-    }
-  } catch (err) {
-    console.log('Stating in login');
-  }
-
+Login.getInitialProps = async () => {
   return {
     showLayout: false,
-    meta: {
-      title: 'Donkey',
-      page: 'Login',
-      description: 'Your friendly donkey app!',
-    },
+    title: 'Login',
   };
 };
 

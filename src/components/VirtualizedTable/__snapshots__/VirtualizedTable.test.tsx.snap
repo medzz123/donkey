@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<VirtualizedTable /> should render without throwing an error and match snapshot 1`] = `
+<div
+  style={
+    Object {
+      "height": 0,
+      "overflow": "visible",
+      "width": 0,
+    }
+  }
+>
+  <div
+    aria-colcount={2}
+    aria-rowcount={2}
+    className="ReactVirtualized__Table MuiVirtualizedTable-table-2"
+    role="grid"
+    style={Object {}}
+  >
+    <div
+      className="ReactVirtualized__Table__headerRow MuiVirtualizedTable-tableRow-3 MuiVirtualizedTable-flexContainer-1"
+      role="row"
+      style={
+        Object {
+          "height": 48,
+          "overflow": "hidden",
+          "paddingRight": 0,
+          "width": 0,
+        }
+      }
+    >
+      <div
+        className="ReactVirtualized__Table__headerColumn"
+        role="columnheader"
+        style={
+          Object {
+            "WebkitFlex": "0 1 120px",
+            "flex": "0 1 120px",
+            "msFlex": "0 1 120px",
+          }
+        }
+      >
+        <div
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-5 MuiVirtualizedTable-flexContainer-1 MuiVirtualizedTable-noClick-6 MuiTableCell-alignLeft"
+          role="cell"
+          style={
+            Object {
+              "height": 48,
+            }
+          }
+        >
+          <span>
+            Name
+          </span>
+        </div>
+      </div>
+      <div
+        className="ReactVirtualized__Table__headerColumn"
+        role="columnheader"
+        style={
+          Object {
+            "WebkitFlex": "0 1 120px",
+            "flex": "0 1 120px",
+            "msFlex": "0 1 120px",
+          }
+        }
+      >
+        <div
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-5 MuiVirtualizedTable-flexContainer-1 MuiVirtualizedTable-noClick-6 MuiTableCell-alignLeft"
+          role="cell"
+          style={
+            Object {
+              "height": 48,
+            }
+          }
+        >
+          <span>
+            Lies
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label="grid"
+      aria-readonly={null}
+      className="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
+      onScroll={[Function]}
+      role="rowgroup"
+      style={
+        Object {
+          "WebkitOverflowScrolling": "touch",
+          "boxSizing": "border-box",
+          "direction": "inherit",
+          "height": -48,
+          "overflowX": "hidden",
+          "overflowY": "auto",
+          "position": "relative",
+          "width": 0,
+          "willChange": "transform",
+        }
+      }
+      tabIndex={0}
+    />
+  </div>
+</div>
+`;

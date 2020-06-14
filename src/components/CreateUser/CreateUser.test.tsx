@@ -27,11 +27,7 @@ describe('<CreateUser />', () => {
   it('should render without throwing an error and match snapshot', () => {
     const testRenderer = TestRenderer.create(
       <MockedProvider addTypename={false} mocks={mocks}>
-        <CreateUser
-          onSuccess={jest.fn()}
-          open={false}
-          handleClose={jest.fn()}
-        />
+        <CreateUser onSuccess={jest.fn()} />
       </MockedProvider>
     );
     expect(testRenderer.toJSON()).toMatchSnapshot();

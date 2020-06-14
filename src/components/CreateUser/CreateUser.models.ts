@@ -8,6 +8,8 @@ export interface UserValues {
 
 export interface CreateUserProps {
   onSuccess: () => void;
-  open: boolean;
+}
+export interface CreateUserRefs {
   handleClose: () => void;
+  handleOpen: () => void;
 }

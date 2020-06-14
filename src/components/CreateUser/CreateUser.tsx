@@ -8,83 +8,101 @@ import { Form, Formik } from 'formik';
 import React from 'react';
 import { toast } from 'react-toastify';
 
-import { CreateUserProps } from './CreateUser.models';
+import { CreateUserProps, CreateUserRefs } from './CreateUser.models';
 import { useStyles } from './CreateUser.styles';
 import { validateCreateUser } from './CreateUser.validate';
 
-const CreateUser: React.FunctionComponent<CreateUserProps> = (props) => {
-  const { onSuccess, open, handleClose } = props;
-  const [createUser] = useMutation(CREATE_USER_MUTATION);
+const CreateUser = React.forwardRef<CreateUserRefs, CreateUserProps>(
+  (props, ref) => {
+    const { onSuccess } = props;
+    const [open, setOpen] = React.useState(false);
 
-  const classes = useStyles();
+    const handleClose = () => {
+      setOpen(false);
+    };
+    const handleOpen = () => {
+      setOpen(true);
+    };
 
-  const notifyError = () => {
-    toast.error('Creating user failed 😋');
-  };
+    React.useImperativeHandle(ref, () => ({
+      handleClose,
+      handleOpen,
+    }));
 
-  const notifySuccess = () => {
-    toast.success('Creating user succeeded 😋');
-  };
+    const [createUser] = useMutation(CREATE_USER_MUTATION);
 
-  return (
-    <Modal open={open} onClose={handleClose} title="Create User">
-      <Formik
-        initialValues={{
-          name: '',
-          password: '',
-          username: '',
-          role: 'Ugendo',
-          rate: '',
-        }}
-        validate={validateCreateUser}
-        onSubmit={async (values, actions) => {
-          try {
-            await createUser({
-              variables: {
-                ...values,
-              },
-            });
+    const classes = useStyles();
 
-            notifySuccess();
-            onSuccess();
-            actions.resetForm();
-          } catch (e) {
-            notifyError();
-            console.error('Creating user failed with error: ', e);
-          }
-        }}
-      >
-        {(props) => (
-          <Form>
-            <div className={classes.form}>
-              <FormikTextInput name="name" label="Name" />
-              <FormikTextInput name="username" label="Username" />
-              <FormikTextInput name="password" label="Password" />
-              <FormikSelect
-                name="role"
-                label="Role"
-                data={[
-                  { value: 'Ugendo', label: 'Bugendo' },
-                  { value: 'Nintendo', label: 'Suckendo' },
-                ]}
-              />
-              <FormikTextInput name="rate" label="Rate" />
-              <Button
-                variant="contained"
-                color="primary"
-                type="submit"
-                disabled={props.isSubmitting}
-                className={classes.button}
-                fullWidth={true}
-              >
-                Create New User
-              </Button>
-            </div>
-          </Form>
-        )}
-      </Formik>
-    </Modal>
-  );
-};
+    const notifyError = () => {
+      toast.error('Creating user failed 😋');
+    };
+
+    const notifySuccess = () => {
+      toast.success('Creating user succeeded 😋');
+    };
+
+    return (
+      <Modal open={open} onClose={handleClose} title="Create User">
+        <Formik
+          initialValues={{
+            name: '',
+            password: '',
+            username: '',
+            role: 'Ugendo',
+            rate: '',
+          }}
+          validate={validateCreateUser}
+          onSubmit={async (values, actions) => {
+            try {
+              await createUser({
+                variables: {
+                  ...values,
+                },
+              });
+
+              notifySuccess();
+              onSuccess();
+              actions.resetForm();
+            } catch (e) {
+              notifyError();
+              console.error('Creating user failed with error: ', e);
+            }
+          }}
+        >
+          {(props) => (
+            <Form>
+              <div className={classes.form}>
+                <FormikTextInput name="name" label="Name" />
+                <FormikTextInput name="username" label="Username" />
+                <FormikTextInput name="password" label="Password" />
+                <FormikSelect
+                  name="role"
+                  label="Role"
+                  data={[
+                    { value: 'Ugendo', label: 'Bugendo' },
+                    { value: 'Nintendo', label: 'Suckendo' },
+                  ]}
+                />
+                <FormikTextInput name="rate" label="Rate" />
+                <Button
+                  variant="contained"
+                  color="primary"
+                  type="submit"
+                  disabled={props.isSubmitting}
+                  className={classes.button}
+                  fullWidth={true}
+                >
+                  Create New User
+                </Button>
+              </div>
+            </Form>
+          )}
+        </Formik>
+      </Modal>
+    );
+  }
+);
+
+CreateUser.displayName = 'Create User';
 
 export default CreateUser;

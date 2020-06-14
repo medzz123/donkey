@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/react-hooks';
-import CreateUser from '@components/CreateUser';
+import CreateUser, { CreateUserRefs } from '@components/CreateUser';
 import VirtualizedTable from '@components/VirtualizedTable';
 import { USERS_LIST_QUERY } from '@domain/queries/user';
 import { Button, IconButton, Paper } from '@material-ui/core';
@@ -15,14 +15,10 @@ import { useStyles } from './Staff.styles';
 const Staff: NextPage = () => {
   const { data, loading, refetch, networkStatus } = useQuery(USERS_LIST_QUERY);
 
-  const [open, setOpen] = React.useState(false);
-
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const modal = React.useRef<CreateUserRefs>(null);
 
   const handleOpen = () => {
-    setOpen(true);
+    modal.current?.handleOpen();
   };
 
   const classes = useStyles();
@@ -97,11 +93,7 @@ const Staff: NextPage = () => {
           ]}
         />
       </Paper>
-      <CreateUser
-        onSuccess={onCreateUser}
-        open={open}
-        handleClose={handleClose}
-      />
+      <CreateUser onSuccess={onCreateUser} ref={modal} />
     </div>
   );
 };

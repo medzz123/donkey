@@ -1,5 +1,4 @@
 import constants from '@domain/constants';
-import { ME_QUERY } from '@domain/queries/user';
 import redirect from '@utils/redirect';
 import React from 'react';
 
@@ -17,16 +16,7 @@ const Index = () => {
 };
 
 Index.getInitialProps = async (ctx) => {
-  try {
-    const response = await ctx.apolloClient.query({ query: ME_QUERY });
-    if (!response || !response.data || !response.data.me) {
-      redirect(ctx, constants.routes.publicRoutes.login);
-    }
-    redirect(ctx, constants.routes.privateRoutes.staff);
-  } catch (err) {
-    redirect(ctx, constants.routes.publicRoutes.login);
-  }
-
+  redirect(ctx, constants.routes.publicRoutes.login);
   return {};
 };
 

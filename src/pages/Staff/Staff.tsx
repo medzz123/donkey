@@ -6,7 +6,6 @@ import { Button, IconButton, Paper } from '@material-ui/core';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
 import { Edit } from '@material-ui/icons';
-import { withAuth } from '@utils/withAuth';
 import { NextPage } from 'next';
 import React from 'react';
 
@@ -105,4 +104,4 @@ Staff.getInitialProps = async () => {
   };
 };
 
-export default withAuth(Staff);
+export default Staff;

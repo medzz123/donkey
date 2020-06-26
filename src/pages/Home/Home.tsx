@@ -8,6 +8,7 @@ import {
   ListItemText,
   Typography,
 } from '@material-ui/core';
+import { withAuth } from '@utils/withAuth';
 import React from 'react';
 
 import { useStyles } from './Home.styles';
@@ -76,4 +77,4 @@ Home.getInitialProps = async () => {
   };
 };
 
-export default Home;
+export default withAuth(Home);

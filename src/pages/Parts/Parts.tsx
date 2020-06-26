@@ -1,5 +1,6 @@
 import VirtualizedTable from '@components/VirtualizedTable';
 import { Box, Button, Grid, Paper, Typography } from '@material-ui/core';
+import { withAuth } from '@utils/withAuth';
 import React from 'react';
 
 import data from '../../mocks/parts.json';
@@ -75,4 +76,4 @@ Parts.getInitialProps = async () => {
   };
 };
 
-export default Parts;
+export default withAuth(Parts);

@@ -51,8 +51,10 @@ const Login = () => {
                   },
                 });
 
-                Cookie.set('token', response.data.loginUser.token);
-                Router.reload();
+                console.log('Response', response);
+
+                Cookie.set('token', response.data.signIn.token);
+                await Router.push('/');
               } catch (e) {
                 notify();
                 console.log('Login failed', e);

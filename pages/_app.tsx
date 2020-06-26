@@ -4,7 +4,7 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from '@theme/mui';
-import withData from '@utils/apollo-client';
+import withData, { parseCookies } from '@utils/apollo-client';
 import NextApp from 'next/app';
 import Head from 'next/head';
 import React from 'react';
@@ -52,6 +52,9 @@ const App = ({ Component, pageProps, apollo, router }) => {
 };
 
 App.getInitialProps = async (appContext) => {
+  console.log('Pathname', appContext.ctx.pathname);
+  const cookies = parseCookies(appContext.ctx);
+  console.log('Cookies', cookies);
   const appProps = await NextApp.getInitialProps(appContext);
   return { ...appProps };
 };

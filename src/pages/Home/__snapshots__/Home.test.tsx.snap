@@ -5,6 +5,18 @@ exports[`<Home /> should render without throwing an error and match snapshot 1`]
   <div
     className="makeStyles-container-3"
   >
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      Set a damm cookie
+    </button>
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      Remove cookie
+    </button>
     <div
       className="MuiPaper-root MuiCard-root makeStyles-cardRoot-1 MuiPaper-elevation1 MuiPaper-rounded"
     >

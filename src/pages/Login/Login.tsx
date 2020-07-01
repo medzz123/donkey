@@ -12,7 +12,6 @@ import {
 import { LockOutlined } from '@material-ui/icons';
 import { Form, Formik } from 'formik';
 import Cookie from 'js-cookie';
-import Router from 'next/router';
 import React from 'react';
 import { toast } from 'react-toastify';
 
@@ -43,6 +42,7 @@ const Login = () => {
             initialValues={{ username: '', password: '' }}
             validate={validateLogIn}
             onSubmit={async (values) => {
+              Cookie.remove('token');
               try {
                 const response = await loginMutation({
                   variables: {
@@ -51,8 +51,9 @@ const Login = () => {
                   },
                 });
 
-                Cookie.set('token', response.data.loginUser.token);
-                Router.reload();
+                Cookie.set('token', response.data.signIn.token);
+
+                window.location.href = '/';
               } catch (e) {
                 notify();
                 console.log('Login failed', e);

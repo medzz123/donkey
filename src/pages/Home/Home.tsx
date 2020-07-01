@@ -8,6 +8,7 @@ import {
   ListItemText,
   Typography,
 } from '@material-ui/core';
+import Cookie from 'js-cookie';
 import React from 'react';
 
 import { useStyles } from './Home.styles';
@@ -18,6 +19,22 @@ const Home = () => {
   return (
     <div>
       <div className={classes.container}>
+        <button
+          type="button"
+          onClick={() => {
+            Cookie.set('test', 'Hi');
+          }}
+        >
+          Set a damm cookie
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            Cookie.remove('test');
+          }}
+        >
+          Remove cookie
+        </button>
         <Card className={classes.cardRoot}>
           <Typography variant="h5">3 Jobs Are unassigned!</Typography>
           <Box mt={2} />

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Admin /> should render without throwing an error and match snapshot 1`] = `
+<div>
+  <p
+    className="MuiTypography-root MuiTypography-body1"
+  >
+    Admin Dashboard
+  </p>
+</div>
+`;

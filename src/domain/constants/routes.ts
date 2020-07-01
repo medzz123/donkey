@@ -1,11 +1,11 @@
 const publicRoutes = {
-  login: '/login',
   index: '/',
+  login: '/login',
 };
 
 const privateRoutes = {
-  home: '/home',
-  staff: '/staff',
+  home: '/',
+  users: '/users',
   parts: '/parts',
   jobs: '/jobs',
   payments: '/payments',

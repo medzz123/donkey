@@ -5,7 +5,7 @@ const publicRoutes = {
 
 const privateRoutes = {
   home: '/',
-  staff: '/staff',
+  users: '/users',
   parts: '/parts',
   jobs: '/jobs',
   payments: '/payments',

@@ -13,7 +13,6 @@ import {
   Typography,
 } from '@material-ui/core';
 import {
-  Apple,
   ChevronLeft,
   Dashboard,
   ExitToApp,
@@ -31,7 +30,7 @@ import { LayoutProps } from './Layout.models';
 import { useStyles } from './Layout.styles';
 
 const Layout: React.FunctionComponent<LayoutProps> = (props) => {
-  const { children, showLayout, currentRoute, title } = props;
+  const { children, showLayout, currentRoute, title, role } = props;
 
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
@@ -92,12 +91,17 @@ const Layout: React.FunctionComponent<LayoutProps> = (props) => {
         </div>
         <Divider />
         <List>
-          <Link href={constants.routes.privateRoutes.home}>
+          <Link
+            href={
+              role === 'ADMIN' ? '/admin' : constants.routes.privateRoutes.home
+            }
+          >
             <ListItem button>
               <ListItemIcon>
                 <Dashboard
                   color={
-                    currentRoute === constants.routes.privateRoutes.home
+                    currentRoute === constants.routes.privateRoutes.home ||
+                    currentRoute === '/admin'
                       ? 'primary'
                       : 'inherit'
                   }
@@ -106,28 +110,19 @@ const Layout: React.FunctionComponent<LayoutProps> = (props) => {
               <ListItemText primary="Home" />
             </ListItem>
           </Link>
-          <Link href={constants.routes.privateRoutes.staff}>
+          <Link
+            href={
+              role === 'ADMIN'
+                ? constants.routes.privateRoutes.users
+                : constants.routes.privateRoutes.customers
+            }
+          >
             <ListItem button>
               <ListItemIcon>
                 <Person
                   color={
-                    currentRoute === constants.routes.privateRoutes.staff
-                      ? 'primary'
-                      : 'inherit'
-                  }
-                />
-              </ListItemIcon>
-              <ListItemText primary="Users" />
-            </ListItem>
-          </Link>{' '}
-          <Link href={constants.routes.privateRoutes.customers}>
-            <ListItem button>
-              <ListItemIcon>
-                <Apple
-                  color={
-                    currentRoute.includes(
-                      constants.routes.privateRoutes.customers
-                    )
+                    currentRoute === constants.routes.privateRoutes.users ||
+                    currentRoute === constants.routes.privateRoutes.customers
                       ? 'primary'
                       : 'inherit'
                   }
@@ -136,48 +131,52 @@ const Layout: React.FunctionComponent<LayoutProps> = (props) => {
               <ListItemText primary="Users" />
             </ListItem>
           </Link>
-          <Link href={constants.routes.privateRoutes.jobs}>
-            <ListItem button>
-              <ListItemIcon>
-                <ListAlt
-                  color={
-                    currentRoute === constants.routes.privateRoutes.jobs
-                      ? 'primary'
-                      : 'inherit'
-                  }
-                />
-              </ListItemIcon>
-              <ListItemText primary="Jobs" />
-            </ListItem>
-          </Link>
-          <Link href={constants.routes.privateRoutes.parts}>
-            <ListItem button>
-              <ListItemIcon>
-                <Store
-                  color={
-                    currentRoute === constants.routes.privateRoutes.parts
-                      ? 'primary'
-                      : 'inherit'
-                  }
-                />
-              </ListItemIcon>
-              <ListItemText primary="Parts" />
-            </ListItem>
-          </Link>
-          <Link href={constants.routes.privateRoutes.payments}>
-            <ListItem button>
-              <ListItemIcon>
-                <Payment
-                  color={
-                    currentRoute === constants.routes.privateRoutes.payments
-                      ? 'primary'
-                      : 'inherit'
-                  }
-                />
-              </ListItemIcon>
-              <ListItemText primary="Payments" />
-            </ListItem>
-          </Link>
+          {role !== 'ADMIN' && (
+            <>
+              <Link href={constants.routes.privateRoutes.jobs}>
+                <ListItem button>
+                  <ListItemIcon>
+                    <ListAlt
+                      color={
+                        currentRoute === constants.routes.privateRoutes.jobs
+                          ? 'primary'
+                          : 'inherit'
+                      }
+                    />
+                  </ListItemIcon>
+                  <ListItemText primary="Jobs" />
+                </ListItem>
+              </Link>
+              <Link href={constants.routes.privateRoutes.parts}>
+                <ListItem button>
+                  <ListItemIcon>
+                    <Store
+                      color={
+                        currentRoute === constants.routes.privateRoutes.parts
+                          ? 'primary'
+                          : 'inherit'
+                      }
+                    />
+                  </ListItemIcon>
+                  <ListItemText primary="Parts" />
+                </ListItem>
+              </Link>
+              <Link href={constants.routes.privateRoutes.payments}>
+                <ListItem button>
+                  <ListItemIcon>
+                    <Payment
+                      color={
+                        currentRoute === constants.routes.privateRoutes.payments
+                          ? 'primary'
+                          : 'inherit'
+                      }
+                    />
+                  </ListItemIcon>
+                  <ListItemText primary="Payments" />
+                </ListItem>
+              </Link>
+            </>
+          )}
         </List>
         <Divider />
         <List>

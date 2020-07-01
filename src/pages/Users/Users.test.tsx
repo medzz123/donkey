@@ -3,7 +3,7 @@ import { USERS_LIST_QUERY } from '@domain/queries/user';
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 
-import Staff from '.';
+import Users from '.';
 
 const mocks = [
   {
@@ -18,11 +18,11 @@ const mocks = [
   },
 ];
 
-describe('<Staff />', () => {
+describe('<Users />', () => {
   it('should render without throwing an error and match snapshot', () => {
     const testRenderer = TestRenderer.create(
       <MockedProvider addTypename={false} mocks={mocks}>
-        <Staff />
+        <Users />
       </MockedProvider>
     );
     expect(testRenderer.toJSON()).toMatchSnapshot();

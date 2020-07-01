@@ -1,19 +1,14 @@
-import { useQuery } from '@apollo/react-hooks';
 import CreateUser, { CreateUserRefs } from '@components/CreateUser';
 import VirtualizedTable from '@components/VirtualizedTable';
-import { USERS_LIST_QUERY } from '@domain/queries/user';
-import { Button, IconButton, Paper } from '@material-ui/core';
+import { Button, Paper } from '@material-ui/core';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
-import { Edit } from '@material-ui/icons';
 import { NextPage } from 'next';
 import React from 'react';
 
-import { useStyles } from './Staff.styles';
+import { useStyles } from './Users.styles';
 
 const Staff: NextPage = () => {
-  const { data, loading, refetch, networkStatus } = useQuery(USERS_LIST_QUERY);
-
   const modal = React.useRef<CreateUserRefs>(null);
 
   const handleOpen = () => {
@@ -22,25 +17,23 @@ const Staff: NextPage = () => {
 
   const classes = useStyles();
 
-  const rows = React.useMemo(() => {
-    if (loading || !data) {
-      return [];
-    }
-
-    return data.users.map((user) => ({
-      ...user,
+  const rows = [
+    {
+      name: 'Ugendo',
+      username: 'uga',
       role: 'Admin',
-      rate: '£1.75',
-      edit: (
-        <IconButton>
-          <Edit color="secondary" />
-        </IconButton>
-      ),
-    }));
-  }, [loading, networkStatus]);
+      rate: '1.0',
+    },
+    {
+      name: 'Bugendo',
+      username: 'buga',
+      role: 'Receptionist',
+      rate: '1.0',
+    },
+  ];
 
   const onCreateUser = () => {
-    refetch();
+    console.log('You think you created a user bitch');
   };
 
   return (
@@ -83,11 +76,6 @@ const Staff: NextPage = () => {
               width: 200,
               label: 'Rate',
               dataKey: 'rate',
-            },
-            {
-              width: 200,
-              label: 'Edit',
-              dataKey: 'edit',
             },
           ]}
         />

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Staff /> should render without throwing an error and match snapshot 1`] = `
+exports[`<Users /> should render without throwing an error and match snapshot 1`] = `
 <div>
   <div
     className="makeStyles-header-3"
@@ -60,8 +60,8 @@ exports[`<Staff /> should render without throwing an error and match snapshot 1`
       }
     >
       <div
-        aria-colcount={5}
-        aria-rowcount={0}
+        aria-colcount={4}
+        aria-rowcount={2}
         className="ReactVirtualized__Table MuiVirtualizedTable-table-6"
         role="grid"
         style={Object {}}
@@ -179,32 +179,6 @@ exports[`<Staff /> should render without throwing an error and match snapshot 1`
             >
               <span>
                 Rate
-              </span>
-            </div>
-          </div>
-          <div
-            className="ReactVirtualized__Table__headerColumn"
-            role="columnheader"
-            style={
-              Object {
-                "WebkitFlex": "0 1 200px",
-                "flex": "0 1 200px",
-                "msFlex": "0 1 200px",
-              }
-            }
-          >
-            <div
-              aria-sort={null}
-              className="MuiTableCell-root MuiTableCell-head MuiVirtualizedTable-tableCell-9 MuiVirtualizedTable-flexContainer-5 MuiVirtualizedTable-noClick-10 MuiTableCell-alignLeft"
-              role="cell"
-              style={
-                Object {
-                  "height": 48,
-                }
-              }
-            >
-              <span>
-                Edit
               </span>
             </div>
           </div>

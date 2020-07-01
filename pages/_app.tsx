@@ -1,10 +1,12 @@
 import 'react-toastify/dist/ReactToastify.css';
 
 import { ApolloProvider } from '@apollo/react-hooks';
+import { ME_QUERY } from '@domain/queries/user';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from '@theme/mui';
-import withData, { parseCookies } from '@utils/apollo-client';
+import withData from '@utils/apollo-client';
+import redirect from '@utils/redirect';
 import NextApp from 'next/app';
 import Head from 'next/head';
 import React from 'react';
@@ -12,7 +14,7 @@ import { toast, ToastContainer } from 'react-toastify';
 
 import Layout from '../src/components/Layout/Layout';
 
-const App = ({ Component, pageProps, apollo, router }) => {
+const App = ({ Component, pageProps, apollo, router, me }) => {
   const { title = 'Donkey', showLayout = false } = pageProps;
 
   React.useEffect(() => {
@@ -39,6 +41,7 @@ const App = ({ Component, pageProps, apollo, router }) => {
           showLayout={showLayout}
           currentRoute={router.route}
           title={title}
+          role={me?.role}
         >
           <ToastContainer
             // @ts-ignore
@@ -51,12 +54,52 @@ const App = ({ Component, pageProps, apollo, router }) => {
   );
 };
 
+const publicRoutes = ['/login'];
+
+const adminRoutes = ['/admin', '/users'];
+
 App.getInitialProps = async (appContext) => {
-  console.log('Pathname', appContext.ctx.pathname);
-  const cookies = parseCookies(appContext.ctx);
-  console.log('Cookies', cookies);
   const appProps = await NextApp.getInitialProps(appContext);
-  return { ...appProps };
+
+  const context = appContext.ctx;
+
+  const currentPath = context.pathname;
+
+  if (publicRoutes.includes(currentPath)) {
+    return { ...appProps };
+  }
+
+  const apolloClient = context.apolloClient;
+
+  try {
+    const response = await apolloClient.query({ query: ME_QUERY });
+    if (!response.data.me) {
+      redirect(context, '/login');
+      return { ...appProps };
+    }
+
+    if (
+      response.data.me.role === 'ADMIN' &&
+      !adminRoutes.includes(currentPath)
+    ) {
+      redirect(context, '/admin');
+
+      return {
+        me: response.data.me,
+        ...appProps,
+      };
+    }
+
+    return {
+      me: response.data.me,
+      ...appProps,
+    };
+  } catch (err) {
+    redirect(context, '/login');
+    return {
+      ...appProps,
+    };
+  }
 };
 
 export default withData(App);

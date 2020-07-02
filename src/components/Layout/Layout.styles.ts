@@ -2,12 +2,23 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const drawerWidth = 240;
 
+const closedDrawer = 73;
+
 export const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
   },
+  bar: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    backgroundColor: theme.palette.background.default,
+    color: theme.palette.common.black,
+  },
   appBar: {
-    zIndex: theme.zIndex.drawer + 1,
+    marginLeft: closedDrawer,
+    boxShadow: 'none',
+    borderBottom: `1px solid ${theme.palette.divider}`,
+    width: `calc(100% - ${closedDrawer}px)`,
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -20,9 +31,6 @@ export const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
-  },
-  menuButton: {
-    marginRight: 36,
   },
   hide: {
     display: 'none',

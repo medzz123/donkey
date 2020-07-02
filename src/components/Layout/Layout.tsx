@@ -2,6 +2,7 @@ import constants from '@domain/constants';
 import { logout } from '@domain/handlers/logout';
 import {
   AppBar,
+  Avatar,
   Divider,
   Drawer,
   IconButton,
@@ -17,7 +18,6 @@ import {
   Dashboard,
   ExitToApp,
   ListAlt,
-  Menu,
   Payment,
   Person,
   Store,
@@ -35,12 +35,8 @@ const Layout: React.FunctionComponent<LayoutProps> = (props) => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
+  const handleDrawer = () => {
+    setOpen(!open);
   };
 
   if (!showLayout) {
@@ -54,21 +50,14 @@ const Layout: React.FunctionComponent<LayoutProps> = (props) => {
           [classes.appBarShift]: open,
         })}
       >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            className={clsx(classes.menuButton, {
-              [classes.hide]: open,
-            })}
-          >
-            <Menu />
-          </IconButton>
+        <Toolbar className={classes.bar}>
           <Typography variant="h6" noWrap>
             Donkey - {title && title}
           </Typography>
+          <Avatar
+            alt="Image of something"
+            src="https://png.pngtree.com/png-clipart/20190705/original/pngtree-cartoon-european-and-american-character-avatar-design-png-image_4366075.jpg"
+          />
         </Toolbar>
       </AppBar>
       <Drawer
@@ -85,7 +74,7 @@ const Layout: React.FunctionComponent<LayoutProps> = (props) => {
         }}
       >
         <div className={classes.toolbar}>
-          <IconButton onClick={handleDrawerClose}>
+          <IconButton onClick={handleDrawer}>
             <ChevronLeft />
           </IconButton>
         </div>

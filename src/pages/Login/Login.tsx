@@ -38,6 +38,7 @@ const Login = () => {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
+          <Box mb={4} />
           <Formik
             initialValues={{ username: '', password: '' }}
             validate={validateLogIn}
@@ -64,7 +65,7 @@ const Login = () => {
               <Form className={classes.form} noValidate>
                 <FormikTextInput
                   name="username"
-                  label="Email"
+                  label="Username / Email"
                   variant="outlined"
                 />
                 <Box mt={2} />

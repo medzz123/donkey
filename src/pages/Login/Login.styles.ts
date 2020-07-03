@@ -1,11 +1,15 @@
 import { makeStyles } from '@material-ui/core';
 
+const images = ['ape', 'bear', 'goat', 'horse', 'lion', 'panther', 'panther-2'];
+
+const randomElement = images[Math.floor(Math.random() * images.length)];
+
 export const useStyles = makeStyles((theme) => ({
   root: {
     height: '100vh',
   },
   image: {
-    backgroundImage: 'url(https://source.unsplash.com/random)',
+    backgroundImage: `url(/images/${randomElement}.jpg)`,
     backgroundRepeat: 'no-repeat',
     backgroundColor:
       theme.palette.type === 'light'

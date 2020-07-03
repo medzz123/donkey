@@ -65,41 +65,43 @@ App.getInitialProps = async (appContext) => {
 
   const currentPath = context.pathname;
 
-  if (publicRoutes.includes(currentPath)) {
-    return { ...appProps };
-  }
+  return { ...appProps };
 
-  const apolloClient = context.apolloClient;
+  // if (publicRoutes.includes(currentPath)) {
+  //   return { ...appProps };
+  // }
 
-  try {
-    const response = await apolloClient.query({ query: ME_QUERY });
-    if (!response.data.me) {
-      redirect(context, '/login');
-      return { ...appProps };
-    }
+  // const apolloClient = context.apolloClient;
 
-    if (
-      response.data.me.role === 'ADMIN' &&
-      !adminRoutes.includes(currentPath)
-    ) {
-      redirect(context, '/admin');
+  // try {
+  //   const response = await apolloClient.query({ query: ME_QUERY });
+  //   if (!response.data.me) {
+  //     redirect(context, '/login');
+  //     return { ...appProps };
+  //   }
 
-      return {
-        me: response.data.me,
-        ...appProps,
-      };
-    }
+  //   if (
+  //     response.data.me.role === 'ADMIN' &&
+  //     !adminRoutes.includes(currentPath)
+  //   ) {
+  //     redirect(context, '/admin');
 
-    return {
-      me: response.data.me,
-      ...appProps,
-    };
-  } catch (err) {
-    redirect(context, '/login');
-    return {
-      ...appProps,
-    };
-  }
+  //     return {
+  //       me: response.data.me,
+  //       ...appProps,
+  //     };
+  //   }
+
+  //   return {
+  //     me: response.data.me,
+  //     ...appProps,
+  //   };
+  // } catch (err) {
+  //   redirect(context, '/login');
+  //   return {
+  //     ...appProps,
+  //   };
+  // }
 };
 
 export default withData(App);

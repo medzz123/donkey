@@ -17,6 +17,7 @@ export const useStyles = makeStyles((theme) => ({
   appBar: {
     marginLeft: closedDrawer,
     boxShadow: 'none',
+    backgroundColor: 'transparent',
     borderBottom: `1px solid ${theme.palette.divider}`,
     width: `calc(100% - ${closedDrawer}px)`,
     transition: theme.transitions.create(['width', 'margin'], {

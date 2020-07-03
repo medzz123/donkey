@@ -3,6 +3,8 @@ import { logout } from '@domain/handlers/logout';
 import {
   AppBar,
   Avatar,
+  Badge,
+  Box,
   Divider,
   Drawer,
   IconButton,
@@ -10,18 +12,23 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  TextField,
   Toolbar,
   Typography,
+  useTheme,
 } from '@material-ui/core';
 import {
   ChevronLeft,
   Dashboard,
   ExitToApp,
   ListAlt,
+  Notifications,
   Payment,
   Person,
+  Search,
   Store,
 } from '@material-ui/icons';
+import Autocomplete from '@material-ui/lab/Autocomplete';
 import clsx from 'clsx';
 import Link from 'next/link';
 import * as React from 'react';
@@ -29,10 +36,29 @@ import * as React from 'react';
 import { LayoutProps } from './Layout.models';
 import { useStyles } from './Layout.styles';
 
+const stuff = [
+  { title: 'The Shawshank Redemption', year: 1994 },
+  { title: 'The Godfather', year: 1972 },
+  { title: 'The Godfather: Part II', year: 1974 },
+  { title: 'The Dark Knight', year: 2008 },
+  { title: '12 Angry Men', year: 1957 },
+  { title: "Schindler's List", year: 1993 },
+  { title: 'Pulp Fiction', year: 1994 },
+  { title: 'The Lord of the Rings: The Return of the King', year: 2003 },
+  { title: 'The Good, the Bad and the Ugly', year: 1966 },
+  { title: 'Fight Club', year: 1999 },
+  { title: 'The Lord of the Rings: The Fellowship of the Ring', year: 2001 },
+  { title: 'Star Wars: Episode V - The Empire Strikes Back', year: 1980 },
+];
+
 const Layout: React.FunctionComponent<LayoutProps> = (props) => {
   const { children, showLayout, currentRoute, title, role } = props;
 
   const classes = useStyles();
+
+  const theme = useTheme();
+
+  console.log('Theme', theme);
   const [open, setOpen] = React.useState(false);
 
   const handleDrawer = () => {
@@ -51,13 +77,33 @@ const Layout: React.FunctionComponent<LayoutProps> = (props) => {
         })}
       >
         <Toolbar className={classes.bar}>
-          <Typography variant="h6" noWrap>
-            Donkey - {title && title}
-          </Typography>
-          <Avatar
-            alt="Image of something"
-            src="https://png.pngtree.com/png-clipart/20190705/original/pngtree-cartoon-european-and-american-character-avatar-design-png-image_4366075.jpg"
+          <Autocomplete
+            id="combo-box-demo"
+            size="small"
+            options={stuff}
+            getOptionLabel={(option) => option.title}
+            style={{ width: 400 }}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                variant="outlined"
+                placeholder="Search ..."
+              />
+            )}
           />
+
+          <div style={{ display: 'flex' }}>
+            <IconButton aria-label="badge">
+              <Badge badgeContent={4} color="error" variant="dot">
+                <Notifications />
+              </Badge>
+            </IconButton>
+            <Box ml={4} />
+            <Avatar
+              alt="Image of something"
+              src="https://png.pngtree.com/png-clipart/20190705/original/pngtree-cartoon-european-and-american-character-avatar-design-png-image_4366075.jpg"
+            />
+          </div>
         </Toolbar>
       </AppBar>
       <Drawer
